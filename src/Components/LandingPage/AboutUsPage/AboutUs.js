@@ -8,6 +8,8 @@ const corevaluebgblackbg =
 export const aboutUs = {
   bannerContainer: {
     overflow: "hidden",
+    width: "100%",
+    height: "100%",
   },
   bannerimg: {
     width: "100%",

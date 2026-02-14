@@ -17,6 +17,7 @@ import menu from "../../../Assets/Images/Group 88.png";
 // import rightarr from "../Images/navrightarrow.svg";
 import navrigtarrow from "../Homepage/Images/navrightarrow.svg";
 import navbarcancel from "../Homepage/Images/navbarcancel.svg";
+import logo from "../../../Assets/Images/whitelogo.png";
 
 const pagesLarge = [
   { label: "Home", link: "/" },
@@ -25,13 +26,14 @@ const pagesLarge = [
     label: "Marketplace",
     link: "/view-marketplace",
   },
-  {
-    label: "Resources",
-    innerLinks: [
-      { label: "Recent Blogs", link: "/blog" },
-      { label: "FAQs", link: "/faqs" },
-    ],
-  },
+  { label: "FAQs", link: "/faqs" },
+  // {
+  //   label: "Resources",
+  //   innerLinks: [
+  //     { label: "Recent Blogs", link: "/blog" },
+  //     { label: "FAQs", link: "/faqs" },
+  //   ],
+  // },
 ];
 const pagessmall = [
   { label: "Home", link: "/" },
@@ -183,15 +185,12 @@ function ResponsiveAppBar() {
               noWrap
               component="a"
               href="#app-bar-with-responsive-menu"
-              onClick={() => logoRedirection()}
+              // onClick={() => logoRedirection()}
               sx={{
                 mr: 2,
                 display: "flex",
               }}>
-              <img
-                src="https://ajeoba-website.oss-eu-central-1.aliyuncs.com/compressed-images/compressed-images/logo_ax0dgb.svg"
-                alt="Logo"
-              />
+              <img src={logo} alt="Logo" />
             </Typography>
 
             <Box
@@ -275,9 +274,10 @@ function ResponsiveAppBar() {
                     fontSize: "1rem",
                   },
                 }}
-                onClick={() =>
-                  (window.location.href = "https://web.ajeoba.com/signin")
-                }>
+                // onClick={() =>
+                //   (window.location.href = "https://web.ajeoba.com/signin")
+                // }
+              >
                 Log In
               </Box>
 
@@ -302,10 +302,11 @@ function ResponsiveAppBar() {
                     fontSize: "1rem",
                   },
                 }}
-                onClick={() =>
-                  (window.location.href =
-                    "https://web.ajeoba.com/select-user-role")
-                }>
+                // onClick={() =>
+                //   (window.location.href =
+                //     "https://web.ajeoba.com/select-user-role")
+                // }
+              >
                 {" "}
                 Sign Up
               </Box>

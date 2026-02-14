@@ -24,20 +24,18 @@ function ExploreSection() {
 
           <Box sx={exploreSection.exploreContentright}>
             <Typography sx={exploreSection.exploreContentrightText}>
-              At our marketplace, we're not just selling farm products and
-              inputs; we're offering you a pathway to seamless transactions
-              within the value chain.
+              At our marketplace, we don’t just sell farm products and inputs;
+              we provide a seamless way to connect and transact across the
+              agricultural value chain.{" "}
             </Typography>
             <Typography sx={exploreSection.exploreContentrightText}>
-              We connect buyers and sellers to a robust and interactive B2B/B2C
-              digital storefront for quality agricultural produce and inputs. A
-              virtual space to showcase and transact seamlessly, offering you
-              top notch payment settlement services and real time order/delivery
-              tracking.
+              We link buyers and sellers through an interactive B2B/B2C digital
+              platform for quality farm produce and inputs. Showcase, trade, and
+              manage payments and orders with ease in one virtual space.
             </Typography>
             <Typography sx={exploreSection.exploreContentrightText}>
-              Visit our marketplace today and explore the world of high-quality
-              farm products and inputs
+              Explore Farmfold today and access a wide range of high-quality
+              farm products and inputs.
             </Typography>
           </Box>
         </Box>

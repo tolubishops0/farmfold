@@ -114,35 +114,24 @@ const faqss = [
     persona: "All",
     questions: [
       {
-        question: `Question for All`,
+        question: "What is Farmfold?",
         answer:
-          "Ajeoba is an agriculture value-chain digital infrastructure provider. We are creating an ecosystem for agro-allied businesses and value-creating activities leveraging digital, as an alternative to the current, inefficient physical infrastructure.",
+          "Farmfold is an agricultural value-chain digital platform built to connect agro-allied businesses and value creators through efficient, technology-driven infrastructure that replaces outdated physical systems.",
       },
       {
-        question: "Do you provide bulk purchasing options for businesses?",
+        question: "Do you offer bulk purchasing for businesses?",
         answer:
-          "Yes, we offer bulk purchasing options for businesses. Please contact our corporate sales team through the app or website for customized solutions.",
+          "Yes. Farmfold supports bulk purchasing for businesses and organizations. You can reach out through the platform to discuss custom sourcing and volume-based arrangements.",
       },
       {
-        question:
-          "Are the products on your platform authentic and of high quality?",
+        question: "Are products on Farmfold verified and reliable?",
         answer:
-          "We source our products from reputable suppliers to ensure authenticity and quality. If you ever receive a product that does not meet your expectations, please contact our customer support for assistance.",
+          "All products listed on Farmfold are sourced from trusted sellers and partners. If any product does not meet expected standards, our support team is available to assist.",
       },
       {
-        question: "Question 2 for Farming Association",
-        answer: "Answer 2 for Farming Association",
-      },
-      {
-        question: "How do I contact customer support?",
+        question: "How can I reach customer support?",
         answer:
-          "  You can reach our customer support team through the 'Contact Us' section in the app.",
-      },
-      {
-        question:
-          "Are the products on your platform authentic and of high quality?",
-        answer:
-          "We source our products from reputable suppliers to ensure authenticity and quality. If you ever receive a product that does not meet your expectations, please contact our customer support for assistance.",
+          "You can contact Farmfold’s support team through the Contact Us section available on the platform.",
       },
     ],
   },
@@ -150,13 +139,14 @@ const faqss = [
     persona: "Farming Association",
     questions: [
       {
-        question: `Question for Farming Association`,
+        question: "How does Farmfold support farming associations?",
         answer:
-          "We source our products from reputable suppliers to ensure authenticity and quality. If you ever receive a product that does not meet your expectations, please contact our customer support for assistance.",
+          "Farmfold helps farming associations access markets, connect with buyers, and manage transactions more efficiently through a centralized digital platform.",
       },
       {
-        question: "Question 2 for Farming Association",
-        answer: "Answer 2 for Farming Association",
+        question: "Can associations sell produce collectively on Farmfold?",
+        answer:
+          "Yes. Farming associations can list and manage produce collectively, making it easier to reach larger buyers and improve pricing outcomes.",
       },
     ],
   },
@@ -164,13 +154,14 @@ const faqss = [
     persona: "Input Supplier",
     questions: [
       {
-        question: "How do I contact customer support?",
+        question: "How do input suppliers list products on Farmfold?",
         answer:
-          "  You can reach our customer support team through the 'Contact Us' section in the app.",
+          "Input suppliers can onboard through the platform and list approved agricultural inputs such as seeds, fertilizers, and equipment for farmers and businesses.",
       },
       {
-        question: "Question 2 for Input Supplier",
-        answer: "Answer 2 for Input Supplier",
+        question: "Does Farmfold verify listed suppliers?",
+        answer:
+          "Yes. Farmfold reviews suppliers to maintain quality, reliability, and trust across the marketplace.",
       },
     ],
   },
@@ -178,13 +169,14 @@ const faqss = [
     persona: "Aggregator",
     questions: [
       {
-        question: "Is it safe to make payments on your app?",
+        question: "Is payment processing secure on Farmfold?",
         answer:
-          "Yes, we prioritize the security of your transactions. Our app uses secure payment gateways to ensure the safety of your financial information.",
+          "Yes. Farmfold uses secure payment systems to ensure transactions are protected and reliable for all users.",
       },
       {
-        question: "Question 2 for Input Supplier",
-        answer: "Answer 2 for Input Supplier",
+        question: "Can aggregators manage multiple sellers on the platform?",
+        answer:
+          "Yes. Aggregators can manage multiple suppliers and coordinate sales efficiently through Farmfold’s tools.",
       },
     ],
   },
@@ -192,12 +184,14 @@ const faqss = [
     persona: "Corporate Buyer",
     questions: [
       {
-        question: "Question 1 for Corporate Buyer",
-        answer: "Answer 1 for Input Supplier",
+        question: "Can corporate buyers source large volumes on Farmfold?",
+        answer:
+          "Corporate buyers can source bulk quantities directly from verified sellers and farming groups using Farmfold’s marketplace.",
       },
       {
-        question: "Question 2 for Input Supplier",
-        answer: "Answer 2 for Input Supplier",
+        question: "Does Farmfold support recurring supply arrangements?",
+        answer:
+          "Yes. Farmfold enables structured sourcing and repeat supply arrangements based on buyer needs.",
       },
     ],
   },
@@ -205,12 +199,14 @@ const faqss = [
     persona: "Quality Assurance",
     questions: [
       {
-        question: "Question 1 for Quality Assurance",
-        answer: "Answer 1 for Input Supplier",
+        question: "How does Farmfold ensure product quality?",
+        answer:
+          "Farmfold works with verified sellers and applies quality standards to ensure products meet expected requirements.",
       },
       {
-        question: "Question 2 for Input Supplier",
-        answer: "Answer 2 for Input Supplier",
+        question: "Can quality checks be integrated into transactions?",
+        answer:
+          "Yes. Farmfold supports quality review processes as part of its supply chain workflow.",
       },
     ],
   },
@@ -218,13 +214,14 @@ const faqss = [
     persona: "Logistics",
     questions: [
       {
-        question: "Is it safe to make payments on your app?",
+        question: "Does Farmfold support logistics coordination?",
         answer:
-          "Yes, we prioritize the security of your transactions. Our app uses secure payment gateways to ensure the safety of your financial information.",
+          "Farmfold enables coordination between sellers, buyers, and logistics partners to improve delivery efficiency.",
       },
       {
-        question: "Question 2 for Input Supplier",
-        answer: "Answer 2 for Input Supplier",
+        question: "Are transactions protected during delivery?",
+        answer:
+          "Yes. Secure payment and transaction handling ensure protection across the delivery lifecycle.",
       },
     ],
   },

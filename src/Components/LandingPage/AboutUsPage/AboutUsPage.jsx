@@ -15,7 +15,7 @@ function AboutUsPage() {
       <FirstSection />
       <MissionVission />
       <CoreValues />
-      <StaffandBoard />
+      {/* <StaffandBoard /> */}
       <Footer />
     </div>
   );

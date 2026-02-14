@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Box, Grid, Typography, Divider, useMediaQuery } from "@mui/material";
 import { Link } from "react-router-dom";
 import { logoRedirection } from "../../../Services/commonService/commonService";
@@ -12,6 +11,7 @@ import insta from "../Homepage/Images/instagram.svg";
 import phone from "../Homepage/Images/call.svg";
 import location from "../Homepage/Images/location.svg";
 import mail from "../Homepage/Images/sms.svg";
+import logo from "../../../Assets/Images/whitelogo.png";
 
 function Footer() {
   const isSmallScreen = useMediaQuery("(max-width: 767px)");
@@ -24,47 +24,52 @@ function Footer() {
           <Box sx={footer.leftcontainer}>
             <Typography onClick={() => logoRedirection()}>
               <img
-                src="https://ajeoba-website.oss-eu-central-1.aliyuncs.com/compressed-images/compressed-images/logo_ax0dgb.svg"
+                // src={"https://ajeoba-website.oss-eu-central-1.aliyuncs.com/compressed-images/compressed-images/logo_ax0dgb.svg"}
+                src={logo}
                 alt="logo"
               />
             </Typography>
             <Typography sx={footer.leftText}>
-              Ajeoba is an agriculture value-chain digital infrastructure
-              provider focused on bridging various gaps identified in the
-              agricultural value chain.
+              Farmfold provides digital infrastructure that connects and
+              streamlines activities across the agricultural value chain.
             </Typography>
             <Typography sx={footer.socialmediaicons}>
-              <a href="https://www.facebook.com/ajeobaex/">
+              <a href="#">
                 <img
                   src={fb}
                   alt="facebook logo"
                   style={{ cursor: "pointer" }}
                 />
               </a>
-              <a href="https://www.instagram.com/ajeobaex/">
+              <a href="#">
+                {" "}
                 <img
                   src={insta}
                   alt="facebook logo"
                   style={{ cursor: "pointer" }}
                 />
               </a>
-              <a href="https://www.youtube.com/@ajeoba">
-                <img
-                  src={yt}
-                  alt="facebook logo"
-                  style={{ cursor: "pointer" }}
-                />
-              </a>
-              <a href="https://www.twitter.com/ajeobaex">
+
+              <a href="#">
+                {" "}
                 <img
                   src={x}
                   alt="facebook logo"
                   style={{ cursor: "pointer" }}
                 />
               </a>
-              <a href="https://www.linkedin.com/ajeobaex">
+              <a href="#">
+                {" "}
                 <img
                   src={linkedin}
+                  alt="facebook logo"
+                  style={{ cursor: "pointer" }}
+                />
+              </a>
+              <a href="#">
+                {" "}
+                <img
+                  src={yt}
                   alt="facebook logo"
                   style={{ cursor: "pointer" }}
                 />
@@ -73,7 +78,7 @@ function Footer() {
           </Box>
           <Box sx={footer.midcontent}>
             <Typography sx={footer.midcontentsheader}>
-              {!isSmallScreen ? "About Ajeoba" : "More"}
+              {!isSmallScreen ? "About Farmfold" : "More"}
             </Typography>
             <Link to="/about-us" style={{ textDecoration: "none" }}>
               <Typography sx={footer.midcontentsText}>About Us</Typography>
@@ -106,23 +111,19 @@ function Footer() {
             <a href="tel:+2349070534510" style={{ textDecoration: "none" }}>
               <Typography sx={footer.rightcontentsText}>
                 <img src={phone} alt="call icon" />
-                +234 9070534510
+                +234 800000122
               </Typography>
             </a>
-            <a
-              href="mailto:admin@ajeoba.com"
-              style={{ textDecoration: "none" }}>
+            <a href="#" style={{ textDecoration: "none" }}>
               <Typography sx={footer.rightcontentsText}>
                 <img src={mail} alt="email icon" />
-                admin@ajeoba.com{" "}
+                admin@farmfold.com{" "}
               </Typography>
             </a>
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=13+Okotie+Eboh+Street,+Ikoyi,+Lagos+State"
-              style={{ textDecoration: "none" }}>
+            <a href="#" style={{ textDecoration: "none" }}>
               <Typography sx={footer.rightcontentsText}>
                 <img src={location} alt="address icon" />
-                13 Okotie Eboh Street, Ikoyi, Lagos State
+                Lagos, Nigeria
               </Typography>{" "}
             </a>
           </Box>
@@ -132,17 +133,13 @@ function Footer() {
           {isSmallScreen && (
             <Box sx={footer.bottomtopcontent}>
               <Typography sx={footer.midcontentsText}>
-                <Link
-                  to="/terms-and-conditions"
-                  style={{ color: "white", textDecoration: "none" }}>
+                <Link to="#" style={{ color: "white", textDecoration: "none" }}>
                   Terms & Conditions
                 </Link>
               </Typography>
               <Typography sx={footer.midcontentsText}>
                 {" "}
-                <Link
-                  to="/privacy-policy"
-                  style={{ color: "white", textDecoration: "none" }}>
+                <Link to="#" style={{ color: "white", textDecoration: "none" }}>
                   Data Privacy
                 </Link>
               </Typography>{" "}
@@ -150,7 +147,7 @@ function Footer() {
           )}
 
           <Typography sx={footer.midcontentsText}>
-            Copyright ©️ {currYear} Ajeoba. All rights reserved.
+            Copyright ©️ {currYear} Farmfold. All rights reserved.
           </Typography>
         </Box>
       </Box>

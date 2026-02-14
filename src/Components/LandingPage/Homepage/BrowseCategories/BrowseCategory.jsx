@@ -5,7 +5,7 @@ import ArrowRightAltSharpIcon from "@mui/icons-material/ArrowRightAltSharp";
 import { browseCategry } from "./BrowseCategory";
 import ProductlistCard from "./ProductlistCard";
 import { SKIP, LIMITOPENMARKETPLACE } from "../../../../Constant/AppConstant";
-import { showToast } from "../../../../Services/toast";
+import { products } from "./db";
 
 function BrowseCategory() {
   const navigate = useNavigate();
@@ -15,112 +15,22 @@ function BrowseCategory() {
   });
   const isSmallScreen = useMediaQuery("(max-width: 768px)");
 
-  const [productListLandingPage, setProductListLandingPage] = useState([]);
-  const [inputListLandingPage, setInputListLandingPage] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [categoryLoading, setCategoryLoading] = useState(false);
-  const [inputFilterList, setInputFilterList] = useState();
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState("all");
+  const filters = ["all", "farm-produce", "value-added"];
 
-  const fetchProductData = () => {
-    let searchObject = {
-      limit: query.limit,
-      skip: query.skip,
-    };
-
-    let q = Object.keys(searchObject)
-      .map(
-        (k) => encodeURIComponent(k) + "=" + encodeURIComponent(searchObject[k])
-      )
-      .join("&");
-
-    let url =
-      `${process.env.REACT_APP_BASE_URL}/api/public/trading/advertisement?` + q;
-
-    fetch(`${url}`, {
-      method: "get",
-      headers: {
-        "Context-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((res) => {
-        setProductListLandingPage(res?.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        showToast(err.message, "error");
-      });
-  };
-
-  const fetchInputData = () => {
-    setLoading(true);
-    setCategoryLoading(true);
-    let searchObject = {
-      limit: query.limit,
-      skip: query.skip,
-    };
-
-    let q = Object.keys(searchObject)
-      .map(
-        (k) => encodeURIComponent(k) + "=" + encodeURIComponent(searchObject[k])
-      )
-      .join("&");
-
-    let url =
-      `${process.env.REACT_APP_BASE_URL}/api/public/input/advertisement?` + q;
-
-    fetch(`${url}`, {
-      method: "get",
-      headers: {
-        "Context-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((res) => {
-        setInputListLandingPage(res?.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        showToast(err.message, "error");
-      });
-  };
-
-  const fetchInputFilterList = () => {
-    let searchObject = {
-      limit: query.limit,
-      skip: query.skip,
-    };
-
-    let q = Object.keys(searchObject)
-      .map(
-        (k) => encodeURIComponent(k) + "=" + encodeURIComponent(searchObject[k])
-      )
-      .join("&");
-
-    let url = `${process.env.REACT_APP_BASE_URL}/api/public/inputs?` + q;
-
-    fetch(`${url}`, {
-      method: "get",
-      headers: {
-        "Context-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((res) => {
-        setInputFilterList(res?.result);
-        setCategoryLoading(false);
-      })
-      .catch((err) => {
-        showToast(err.message, "error");
-      });
-  };
+  const prodList =
+    filter === "all"
+      ? products
+      : products.filter((prod) => prod.category === filter);
 
   useEffect(() => {
-    setLoading(true);
-    fetchProductData();
-    fetchInputData();
-    fetchInputFilterList();
-  }, [query]);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <Box sx={browseCategry.brosweParentContainer}>
@@ -129,7 +39,7 @@ function BrowseCategory() {
           <Box sx={browseCategry.topcontemttext}>
             <Typography sx={browseCategry.header}>Products category</Typography>
             <Typography sx={browseCategry.header2}>
-              Featured Products Category
+              Check our products
             </Typography>
           </Box>
           {!isSmallScreen && (
@@ -144,12 +54,13 @@ function BrowseCategory() {
           )}
         </Box>
         <ProductlistCard
-          landingPageList={productListLandingPage}
+          landingPageList={prodList}
           loading={loading}
-          categoryLoading={categoryLoading}
-          filterList={productcateggoty}
+          categoryLoading={loading}
+          filterList={filters}
+          setFilter={setFilter}
         />
-        {isSmallScreen && productListLandingPage?.totalCount > 0 && (
+        {isSmallScreen && (
           <Box sx={browseCategry.viewMoreContainersm}>
             <Typography
               onClick={() => navigate("/view-marketplace/farmproduce")}
@@ -160,7 +71,7 @@ function BrowseCategory() {
           </Box>
         )}
 
-        <Box sx={browseCategry.brosweContentheadersFlex}>
+        {/* <Box sx={browseCategry.brosweContentheadersFlex}>
           <Box sx={browseCategry.topcontemttext}>
             <Typography sx={browseCategry.header}>Inputs category</Typography>
             <Typography sx={browseCategry.header2}>
@@ -179,10 +90,10 @@ function BrowseCategory() {
           )}
         </Box>
         <ProductlistCard
-          landingPageList={inputListLandingPage}
+          landingPageList={prodList}
           loading={loading}
-          categoryLoading={categoryLoading}
-          filterList={inputFilterList}
+          categoryLoading={loading}
+          filterList={filters}
         />
         {isSmallScreen && inputListLandingPage?.totalCount > 0 && (
           <Box sx={browseCategry.viewMoreContainersm}>
@@ -193,7 +104,7 @@ function BrowseCategory() {
             </Typography>
             <ArrowRightAltSharpIcon size="large" color="#003C1C" />
           </Box>
-        )}
+        )} */}
       </Box>
     </Box>
   );

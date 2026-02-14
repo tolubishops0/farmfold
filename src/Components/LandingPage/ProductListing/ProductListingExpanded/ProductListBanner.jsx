@@ -23,18 +23,17 @@ function ProductListBanner() {
         }}>
         <Box sx={{ ...styles.textContainer }}>
           <Typography sx={{ ...styles.header }}>
-            Explore high quality farm products and inputs
+            Explore Premium Farm Products and Agro Inputs{" "}
           </Typography>
           <Typography sx={{ ...styles.texts }}>
-            At our marketplace, we're not just selling farm products and inputs;
-            we're offering you a pathway to seamless transactions within the
+            At Farmfold, we don’t just provide farm products and inputs—we
+            create a seamless pathway for transactions across the agricultural
             value chain.<br></br>
             <br></br>
-            We connect buyers and sellers to a robust and interactive B2B/B2C
-            digital storefront for quality agricultural produce and inputs. A
-            virtual space to showcase and transact seamlessly, offering you top
-            notch payment settlement services and real time order/delivery
-            tracking.
+            We connect buyers and sellers through an interactive B2B/B2C digital
+            marketplace, offering a virtual space to showcase, trade, and manage
+            orders. Enjoy reliable payment processing and real-time tracking for
+            every transaction.
           </Typography>
         </Box>
       </Box>

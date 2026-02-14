@@ -43,9 +43,9 @@ function ProductList({ products, loading }) {
     <div>
       {!loading ? (
         <>
-          {products?.totalCount !== 0 ? (
+          {products?.length > 0 ? (
             <Box sx={{ ...styles.listcontainer }}>
-              {products?.result?.map((item, index) => (
+              {products?.map((item, index) => (
                 <Card sx={{ ...styles.card }} key={index}>
                   <Link to={urlLink(item)} style={{ textDecoration: "none" }}>
                     <CardActionArea>
@@ -53,7 +53,7 @@ function ProductList({ products, loading }) {
                         component="img"
                         height="200"
                         // width="300"
-                        image={generateImageUrl(item)}
+                        image={item.image}
                         alt="product"
                       />
                       <CardContent sx={{ ...styles.details }}>
@@ -62,7 +62,7 @@ function ProductList({ products, loading }) {
                           gutterBottom
                           variant="h5"
                           component="div">
-                          {item?.input_name || item?.product_name}
+                          {item?.name}
                         </Typography>
                         <Box
                           sx={{
@@ -80,7 +80,7 @@ function ProductList({ products, loading }) {
                             size="small"
                           />
                           <Typography sx={{ ...styles.ratecount }}>
-                            ({item?.rating_count})
+                            ({item?.rating})
                           </Typography>
                         </Box>
                         <Box sx={{ display: "flex", alignItems: "baseline" }}>
@@ -88,10 +88,7 @@ function ProductList({ products, loading }) {
                             sx={{ ...styles.productname }}
                             variant="body2"
                             color="text.secondary">
-                            {`${numberWithCommas(
-                              item?.price_per_unit,
-                              item?.currency
-                            )}`}
+                            {item?.price}
                           </Typography>
                           <Typography
                             sx={{
@@ -99,9 +96,7 @@ function ProductList({ products, loading }) {
                             }}
                             variant="body2"
                             color="text.secondary">
-                            {`(per ${textCapitalize(
-                              item?.unit_of_measurement
-                            )})`}
+                            {`(per ${textCapitalize(item?.unit)})`}
                           </Typography>
                         </Box>
                       </CardContent>

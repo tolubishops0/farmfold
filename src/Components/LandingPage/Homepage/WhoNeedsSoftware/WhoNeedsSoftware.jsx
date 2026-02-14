@@ -10,6 +10,7 @@ import fc from "../Images/fc.png";
 import eo from "../Images/eo.svg";
 import viewmorearrow from "../Images/arrow-right-02-round.png";
 import { useNavigate } from "react-router";
+import whneeds from "../../../../Assets/Images/Gemini_Generated_Image_5gajhc5gajhc5gaj.png";
 
 import {
   greenbgwhoneedssoftwaredesktop,
@@ -28,18 +29,18 @@ function WhoNeedsSoftware() {
             <Box sx={whoneedssoftware.allcontent}>
               <Box sx={whoneedssoftware.topheadersm}>
                 <Typography sx={whoneedssoftware.header}>
-                  Who Needs Ajeoba’s Software ?
+                  Who Needs FarmFold's Software ?
                 </Typography>
                 <Typography sx={whoneedssoftware.header2}>
-                  The software links agricultural sellers and buyers, leveraging
-                  technology to streamline transactions and boost supply chain
-                  efficiency.
+                  The software enables seamless connections between agricultural
+                  buyers and sellers while improving efficiency across the
+                  supply chain.
                 </Typography>
               </Box>
 
               {/* <Box sx={whoneedssoftware.dashboardimgsm}> */}
               <img
-                src={dashboardsoftwarewhoneedssoftware}
+                src={whneeds}
                 alt="bggreen"
                 style={whoneedssoftware.greenimagesm}
               />
@@ -89,19 +90,19 @@ function WhoNeedsSoftware() {
               <Box sx={whoneedssoftware.leftContainerTopcontent}>
                 <Typography
                   sx={whoneedssoftware.leftContainerTopcontentTopText}>
-                  Who Needs Ajeoba’s <br /> Software ?
+                  Who Needs Farmfold’s <br /> Software ?
                 </Typography>
                 <Typography
                   sx={whoneedssoftware.leftContainerTopcontentBottomText}>
-                  The software links agricultural sellers and buyers, leveraging
-                  technology to streamline transactions and boost supply chain
-                  efficiency.{" "}
+                  The software enables seamless connections between agricultural
+                  buyers and sellers while improving efficiency across the
+                  supply chain.
                 </Typography>
               </Box>
             </Box>
             <Box sx={whoneedssoftware.bottomContainerLeft}>
               <img
-                src={dashboardsoftwarewhoneedssoftware}
+                src={whneeds}
                 alt="bgdashboad"
                 style={whoneedssoftware.bottomContainerLeftimage}
               />

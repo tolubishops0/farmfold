@@ -46,10 +46,12 @@ function ProductlistCard(props) {
   };
 
   const generateImageUrl = (item) => {
-    if (item?.url) {
+    if (item?.image) {
       return `${process.env.REACT_APP_IMAGE_URL}/${item.url}`;
     }
   };
+
+  console.log({ props });
   const SkeletonLoader = () => {
     return (
       <Box sx={browseCategry.activeadlistCard}>
@@ -72,53 +74,35 @@ function ProductlistCard(props) {
 
   return (
     <Box sx={browseCategry.categoryparentContainr}>
-      {!props.categoryLoading ? (
-        <>
-          <Box
-            sx={{
-              ...browseCategry.categoryOptionContainer,
-            }}>
-            {props?.filterList?.result?.map((item, index) => {
-              return (
-                <Typography
-                  onClick={() => categoryListings(item)}
-                  key={index}
-                  sx={browseCategry.categoryOption}>
-                  {item.name}
-                </Typography>
-              );
-            })}
-          </Box>
-        </>
-      ) : (
-        <Box
-          sx={{
-            ...browseCategry.categoryOptionContainer,
-          }}>
-          <Skeleton
-            sx={{
-              bgcolor: "rgba(245, 245, 245, 1)",
-              borderRadius: "50px",
-            }}
-            variant="rounded"
-            width="20%"
-            height={40}
-          />
-        </Box>
-      )}
+      <Box
+        sx={{
+          ...browseCategry.categoryOptionContainer,
+        }}>
+        {props?.filterList?.map((item, index) => {
+          return (
+            <Typography
+              onClick={() => props.setFilter(item)}
+              key={index}
+              sx={browseCategry.categoryOption}>
+              {item}
+            </Typography>
+          );
+        })}
+      </Box>
+
       {!props.loading ? (
         <>
-          {props?.landingPageList?.totalCount !== 0 ? (
+          {props?.landingPageList.length > 0 ? (
             <Box sx={browseCategry.activeadlistContainer}>
-              {props?.landingPageList?.result?.map((item, index) => (
-                <Card sx={browseCategry.activeadlistCard} key={index}>
+              {props?.landingPageList?.splice(0, 5)?.map((item) => (
+                <Card sx={browseCategry.activeadlistCard} key={item.id}>
                   <Link to={urlLink(item)} style={{ textDecoration: "none" }}>
                     <CardActionArea>
                       <CardMedia
                         component="img"
-                        height="150"
+                        height="200"
                         // width="300"
-                        image={generateImageUrl(item)}
+                        image={item.image}
                         alt="product"
                       />
 
@@ -128,7 +112,7 @@ function ProductlistCard(props) {
                           gutterBottom
                           variant="h5"
                           component="div">
-                          {item?.input_name || item?.product_name}
+                          {item?.name}
                         </Typography>
                         <Box
                           sx={{
@@ -148,28 +132,23 @@ function ProductlistCard(props) {
                             readOnly={true}
                             size="small"
                           />
-                          <Typography
+                          {/* <Typography
                             sx={{ ...styles.ratecount, marginTop: "3px" }}>
-                            ({item?.rating_count})
-                          </Typography>
+                            ({item?.id})
+                          </Typography> */}
                         </Box>
                         <Box sx={{ display: "flex", alignItems: "baseline" }}>
                           <Typography
                             sx={{ ...styles.productname }}
                             variant="body2"
                             color="text.secondary">
-                            {`${numberWithCommas(
-                              item?.price_per_unit,
-                              item?.currency
-                            )}`}
+                            {item?.price}
                           </Typography>
                           <Typography
                             sx={{
                               ...styles.productunit,
                             }}>
-                            {`(per ${textCapitalize(
-                              item?.unit_of_measurement
-                            )})`}
+                            {`( ${textCapitalize(item?.unit)})`}
                           </Typography>
                         </Box>
                       </CardContent>

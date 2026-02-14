@@ -2,9 +2,9 @@ export const bannerStyle = {
   background: {
     position: "relative",
     overflow: "hidden",
-    "@media(min-width: 1500px)": {
-      height: "90vh",
-    },
+    // "@media(min-width: 1500px)": {
+    //   height: "90vh",
+    // },
     // "@media(max-width: 1499px)": {
     //   height: "100vh",
     // },

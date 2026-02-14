@@ -79,7 +79,7 @@ function Banner() {
       setIsVisible(false);
       setTimeout(() => {
         setCurrentAvObject(
-          currentAvObject === bannerAvData1 ? bannerAvData2 : bannerAvData1
+          currentAvObject === bannerAvData1 ? bannerAvData2 : bannerAvData1,
         );
         setIsVisible(true);
       }, 1000);
@@ -100,29 +100,28 @@ function Banner() {
   return (
     <>
       {!isSmallScreen ? (
-        <Box sx={bannerStyle.background}>
-          <img src={bannerlg} alt="Banner" style={bannerStyle.bannerImage} />
+        <Box
+          style={{ height: "calc(100vh - 88px)" }}
+          sx={bannerStyle.background}>
+          <div className="absolute inset-0">
+            <img src={bannerlg} alt="Banner" style={bannerStyle.bannerImage} />
+          </div>
           <Box sx={bannerStyle.bannerContentContainer}>
             <Box sx={bannerStyle.bannerTextContainer}>
               <Typography
                 sx={bannerStyle.bannerTextHeader}
                 className="slide-bannerTextHeader">
-                Agriculture Made Smarter With Digital Infrastructure.
+                Farm Management Made Simple With Smart Technology.{" "}
               </Typography>
               <Typography
                 sx={bannerStyle.bannerTextSubtext}
                 className="slide-bannerTextSubtext">
-                We aim to revolutionize how agricultural products are grown,
-                traded, financed, and delivered in Africa through innovative
-                technology.{" "}
+                We strive to transform how farms operate, produce, and sell
+                goods across Africa using cutting-edge solutions.
               </Typography>
               <Button
                 sx={bannerStyle.bannerTextButton}
-                className="slide-bannerTextButton"
-                onClick={() =>
-                  (window.location.href =
-                    "https://web.ajeoba.com/select-user-role")
-                }>
+                className="slide-bannerTextButton">
                 {" "}
                 Get Started
               </Button>

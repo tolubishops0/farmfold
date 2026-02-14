@@ -124,10 +124,9 @@ function ValueProp() {
             <Typography
               // className="lowercontainertext"
               sx={valueprop.lowercontainertext}>
-              Our platform is an innovative approach that we believe will change
-              the landscape and improve the way agricultural products are grown,
-              traded, financed, and delivered in Africa in a transparent and
-              more efficient way.
+              Farmfold is built to reshape how agricultural products are grown,
+              traded, financed, and delivered across Africa with greater
+              transparency and efficiency.
             </Typography>
           </Box>
         </Box>
@@ -142,31 +141,31 @@ const Props = [
   {
     question: "Digital Infrastructure",
     answer:
-      "Ajeoba connects sellers and buyers in agriculture, using technology for efficient transactions, enhancing supply chains operations.",
+      "Farmfold connects agricultural buyers and sellers through technology, enabling seamless transactions and more efficient supply chain operations.",
   },
   {
     question: "Input Supply",
     answer:
-      "Ajeoba links farmers to quality inputs for improved crop health: organic fertilizers, seeds, pesticides, herbicides, and equipments.",
+      "Farmfold provides farmers with access to quality agricultural inputs including seeds, fertilizers, pesticides, herbicides, and essential equipment.",
   },
   {
     question: "Financial Services",
     answer:
-      "Ajeoba bridges financing gaps for Nigerian farmers, helping farmers gain access to small loans to boost agricultural process.",
+      "Farmfold helps close financing gaps by connecting farmers to accessible funding options that support productivity and growth.",
   },
   {
-    question: "Market Arbitrage",
+    question: "Marketplace Access",
     answer:
-      "Creating a B2B2C marketplace for farmers, seamlessly linking them with off-takers and facilitating the sale of high-quality produce.",
+      "Farmfold operates a B2B and B2C marketplace that links farmers directly with buyers, making the sale of quality produce simple and reliable.",
   },
   {
-    question: "Proprietary Investment",
+    question: "Investment Opportunities",
     answer:
-      "Ajeoba is working to build a diversified investment portfolio within the agricultural sector, creating high-yield investment opportunities for investors.",
+      "Farmfold is building a diversified agricultural investment portfolio that offers sustainable and high-potential opportunities for investors.",
   },
   {
-    question: "Intrinsic Database",
+    question: "Data & Insights",
     answer:
-      "Ajeoba addresses data scarcity in agriculture by creating a repository for predictive analysis, aiding farmers and others to make informed decisions.",
+      "Farmfold develops agricultural data systems that support forecasting, analytics, and better decision-making across the value chain.",
   },
 ];

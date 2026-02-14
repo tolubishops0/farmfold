@@ -28,7 +28,7 @@ function ExploreMobileApp() {
               Explore Mobile app
             </Typography>
             <Typography sx={exploremobileapp.header2}>
-              Discover quality products & inputs on ajeoba
+              Discover quality products & inputs on farmfold
             </Typography>
             <Typography sx={exploremobileapp.commingsson}>
               Coming Soon!

@@ -1,6 +1,3 @@
-import React, { useState, useEffect } from "react";
-import { Box, useMediaQuery } from "@mui/material";
-
 import Banner from "./Banner/Banner.jsx";
 import ExploreSection from "./ExploreSection/ExploreSection.jsx";
 import BrowseCategory from "./BrowseCategories/BrowseCategory.jsx";
@@ -13,7 +10,7 @@ import Patners from "./Patners/Patners.jsx";
 
 function HomePage() {
   return (
-    <Box>
+    <>
       <Banner />
       <ExploreSection />
       <BrowseCategory />
@@ -23,7 +20,7 @@ function HomePage() {
       <Testimonials />
       <BlogSection />
       <Patners />
-    </Box>
+    </>
   );
 }
 

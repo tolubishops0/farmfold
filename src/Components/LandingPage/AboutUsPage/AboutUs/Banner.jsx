@@ -17,7 +17,7 @@ function Banner() {
         )}
       </Box>
       <Box sx={aboutUs.titlebg}>
-        <Typography sx={aboutUs.title}>about ajeoba</Typography>
+        <Typography sx={aboutUs.title}>about farmfold</Typography>
       </Box>
     </Box>
   );
