@@ -27,28 +27,8 @@ function ProductlistCard(props) {
   const navigate = useNavigate();
   const urlLink = (item) => {
     let linkTo;
-
-    if (item?.product_name) {
-      linkTo = `/details/farmproduce/${item?.id}`;
-    } else if (item?.input_name) {
-      linkTo = `/details/farminput/${item?.id}`;
-    } else {
-      linkTo = `/details/${item?.id}`;
-    }
+    linkTo = `/details/${item?.id}`;
     return linkTo;
-  };
-  const categoryListings = (item) => {
-    if (item?.input_id) {
-      navigate(`view-marketplace/farminput/${item.id}`);
-    } else {
-      navigate(`view-marketplace/farmproduce/${item.name}`);
-    }
-  };
-
-  const generateImageUrl = (item) => {
-    if (item?.image) {
-      return `${process.env.REACT_APP_IMAGE_URL}/${item.url}`;
-    }
   };
 
   console.log({ props });

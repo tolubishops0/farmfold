@@ -405,15 +405,6 @@ export const mission =
 export const marketplacefloer =
   "https://ajeoba-website.oss-eu-central-1.aliyuncs.com/website%20images/marketplacedetailflower.svg";
 
-
-
-
-
-
-
-
-
-  
 export const MIN_AGE = 18;
 export const MOBILE_NUMBER_REGEX = new RegExp("^(?!0+$)[0-9]{9,15}$");
 export const PASSWORD_REGEX_WITH_SPECIAL_CHARACTERS =
@@ -946,22 +937,23 @@ export const productTypeOptions = [
   },
 ];
 export const allProductOptions = [
+  // "all", "farm-produce", "value-added"
   {
-    label: "Livestock",
-    value: "LIVESTOCK",
+    label: "All",
+    value: "all",
   },
   {
-    label: "Dry",
-    value: "DRY",
+    label: "Farm produce",
+    value: "farm-produce",
   },
   {
-    label: "Refrigerated",
-    value: "REFRIGERATED",
+    label: "Value added",
+    value: "value-added",
   },
-  {
-    label: "Inputs",
-    value: "INPUT",
-  },
+  // {
+  //   label: "Inputs",
+  //   value: "INPUT",
+  // },
 ];
 export const productTypeOptionsLandingPage = [
   {

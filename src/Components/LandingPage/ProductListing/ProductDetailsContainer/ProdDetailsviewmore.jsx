@@ -60,16 +60,10 @@ function ProdDetailsviewmore({ allOpenMarketPlaceProducts, alladsloading }) {
       return `${process.env.REACT_APP_IMAGE_URL}/${item.url}`;
     }
   };
+
   const urlLink = (item) => {
     let linkTo;
-
-    if (item?.product_name) {
-      linkTo = `/details/farmproduce/${item?.id}`;
-    } else if (item?.input_name) {
-      linkTo = `/details/farminput/${item?.id}`;
-    } else {
-      linkTo = `/details/${item?.id}`;
-    }
+    linkTo = `/details/${item?.id}`;
     return linkTo;
   };
 
@@ -93,7 +87,7 @@ function ProdDetailsviewmore({ allOpenMarketPlaceProducts, alladsloading }) {
               sx={{
                 ...styles.listcontainerdetailspage,
               }}>
-              {allOpenMarketPlaceProducts?.result?.map((item, index) => (
+              {allOpenMarketPlaceProducts?.map((item, index) => (
                 <Card sx={{ ...styles.cardDetailspage }} key={index}>
                   <Link to={urlLink(item)} style={{ textDecoration: "none" }}>
                     <CardActionArea>
@@ -101,16 +95,16 @@ function ProdDetailsviewmore({ allOpenMarketPlaceProducts, alladsloading }) {
                         component="img"
                         height="200"
                         // width="300"
-                        image={generateImageUrl(item)}
+                        image={item.image}
                         alt="product"
                       />
                       <CardContent sx={{ ...styles.details }}>
                         <Typography
-                          sx={{ ...styles.productname }}
+                          sx={{ ...styles.name }}
                           gutterBottom
                           variant="h5"
                           component="div">
-                          {item?.input_name || item?.product_name}
+                          {item?.product_name}
                         </Typography>
                         <Box
                           sx={{
@@ -131,7 +125,7 @@ function ProdDetailsviewmore({ allOpenMarketPlaceProducts, alladsloading }) {
                             size="small"
                           />
                           <Typography sx={{ ...styles.ratecount }}>
-                            ({item?.rating_count})
+                            ({item?.rating_count || 60})
                           </Typography>
                         </Box>
                         <Box sx={{ display: "flex", alignItems: "baseline" }}>
@@ -139,10 +133,7 @@ function ProdDetailsviewmore({ allOpenMarketPlaceProducts, alladsloading }) {
                             sx={{ ...styles.productname }}
                             variant="body2"
                             color="text.secondary">
-                            {`${numberWithCommas(
-                              item?.price_per_unit,
-                              item?.currency
-                            )}`}
+                            {item?.price}
                           </Typography>
                           <Typography
                             sx={{
@@ -150,9 +141,7 @@ function ProdDetailsviewmore({ allOpenMarketPlaceProducts, alladsloading }) {
                             }}
                             variant="body2"
                             color="text.secondary">
-                            {`(per ${textCapitalize(
-                              item?.unit_of_measurement
-                            )})`}
+                            {item?.unit}
                           </Typography>
                         </Box>
                       </CardContent>

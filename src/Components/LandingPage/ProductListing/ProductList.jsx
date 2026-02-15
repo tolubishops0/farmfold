@@ -22,21 +22,8 @@ import { commonStyles } from "../../../Style/CommonStyle";
 function ProductList({ products, loading }) {
   const urlLink = (item) => {
     let linkTo;
-
-    if (item?.product_name) {
-      linkTo = `/details/farmproduce/${item?.id}`;
-    } else if (item?.input_name) {
-      linkTo = `/details/farminput/${item?.id}`;
-    } else {
-      linkTo = `/details/${item?.id}`;
-    }
+    linkTo = `/details/${item?.id}`;
     return linkTo;
-  };
-
-  const generateImageUrl = (item) => {
-    if (item?.url) {
-      return `${process.env.REACT_APP_IMAGE_URL}/${item.url}`;
-    }
   };
 
   return (
@@ -96,7 +83,7 @@ function ProductList({ products, loading }) {
                             }}
                             variant="body2"
                             color="text.secondary">
-                            {`(per ${textCapitalize(item?.unit)})`}
+                            {`( ${textCapitalize(item?.unit)})`}
                           </Typography>
                         </Box>
                       </CardContent>

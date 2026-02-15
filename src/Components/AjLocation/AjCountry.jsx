@@ -24,41 +24,41 @@ function AjCountry(props) {
   const [myState, setMyState] = useState(null);
   const [stateMenuOptions, setStateMenuOptions] = useState(null);
 
-  const fetchCountries = () => {
-    let url = `${process.env.REACT_APP_BASE_URL}/api/public/countries`;
+  // const fetchCountries = () => {
+  //   let url = `${process.env.REACT_APP_BASE_URL}/api/public/countries`;
 
-    fetch(`${url}`, {
-      method: "GET",
-    })
-      .then((response) => response.json())
-      .then((res) => {
-        const country = res?.result?.map((item) => {
-          return {
-            countryId: item.id,
-            countryName: item.name,
-            countryCode: item.phone_code,
-            codeOfCountry: item.country_code,
-            label:
-              item.phone_code +
-              "             " +
-              item.name +
-              " (" +
-              item.country_code +
-              ")",
-          };
-        });
-        setCountryMenuOptions(country);
-      })
-      .catch((err) => {
-        showToast(err.message, "error");
-      });
-  };
+  //   fetch(`${url}`, {
+  //     method: "GET",
+  //   })
+  //     .then((response) => response.json())
+  //     .then((res) => {
+  //       const country = res?.result?.map((item) => {
+  //         return {
+  //           countryId: item.id,
+  //           countryName: item.name,
+  //           countryCode: item.phone_code,
+  //           codeOfCountry: item.country_code,
+  //           label:
+  //             item.phone_code +
+  //             "             " +
+  //             item.name +
+  //             " (" +
+  //             item.country_code +
+  //             ")",
+  //         };
+  //       });
+  //       setCountryMenuOptions(country);
+  //     })
+  //     .catch((err) => {
+  //       showToast(err.message, "error");
+  //     });
+  // };
 
-  useEffect(() => {
-    if (!countryMenuOptions.length) {
-      fetchCountries();
-    }
-  }, [countryMenuOptions]);
+  // useEffect(() => {
+  //   if (!countryMenuOptions.length) {
+  //     fetchCountries();
+  //   }
+  // }, [countryMenuOptions]);
 
   const countryCodeChangeHandler = (_event, selectedCountry) => {
     // console.log(selectedCountry, "selectedcountry");

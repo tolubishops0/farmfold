@@ -111,19 +111,3 @@ function BrowseCategory() {
 }
 
 export default BrowseCategory;
-
-const productcateggoty = {
-  result: [
-    // { name: "all products", id: "1" },
-    { name: "refrigerated", id: "2" },
-    { name: "livestock", id: "3" },
-    { name: "dry", id: "4" },
-  ],
-};
-const inputcateggoty = [
-  "All Input",
-  "manure",
-  "Horticulture",
-  "fertilizer",
-  "manure",
-];

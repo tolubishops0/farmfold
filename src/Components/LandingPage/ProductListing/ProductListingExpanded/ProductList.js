@@ -161,6 +161,7 @@ export const styles = {
   },
   filterlg: {
     flexBasis: "15%",
+
     "@media(max-width: 1250px)": {
       flexBasis: "20%",
     },
@@ -186,6 +187,7 @@ export const styles = {
     fontWeight: "500",
     lineHeight: "2rem",
     gap: "1rem",
+    marginBottom: "1rem",
     "@media(max-width: 1500px)": {
       fontSize: "1rem",
       width: "7rem",
@@ -572,12 +574,7 @@ export const styles = {
   productimgContainer: {
     width: "100%",
     height: "23rem ",
-    minHeight: "23rem ",
-    // "@media(max-width: 1100px)": {
-    //   height: "auto",
-    //   objectFit: "cover",
-    //   width: "100%",
-    // },
+    maxHeight: "25rem ",
   },
   leftimagescontainer: {
     display: "flex",
@@ -705,6 +702,8 @@ export const styles = {
     height: "100%",
     borderRadius: "8px",
     cursor: "pointer",
+    objectFit: "cover",
+    objectPosition: "center",
   },
   popupimagecontainer: {
     width: "100%",
