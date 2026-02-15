@@ -1,6 +1,5 @@
 import { Box, Grid, Typography, Divider, useMediaQuery } from "@mui/material";
 import { Link } from "react-router-dom";
-import { logoRedirection } from "../../../Services/commonService/commonService";
 
 import { footer } from "./Foter";
 import fb from "../Homepage/Images/fb.svg";
@@ -22,11 +21,14 @@ function Footer() {
       <Box sx={footer.parentContainer}>
         <Box sx={footer.topcontainer}>
           <Box sx={footer.leftcontainer}>
-            <Typography onClick={() => logoRedirection()}>
+            <Typography
+            // onClick={() => logoRedirection()}
+            // sx={{ width: "30px", height: "30px" }}
+            >
               <img
-                // src={"https://ajeoba-website.oss-eu-central-1.aliyuncs.com/compressed-images/compressed-images/logo_ax0dgb.svg"}
                 src={logo}
                 alt="logo"
+                style={{ width: "150px", height: "auto" }}
               />
             </Typography>
             <Typography sx={footer.leftText}>

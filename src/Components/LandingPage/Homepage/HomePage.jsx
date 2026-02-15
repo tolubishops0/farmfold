@@ -5,7 +5,6 @@ import ValueProp from "./ValueProp/ValueProp.jsx";
 import Testimonials from "./Testimonials/Testimonials.jsx";
 import WhoNeedsSoftware from "./WhoNeedsSoftware/WhoNeedsSoftware.jsx";
 import ExploreMobileApp from "./ExploreMobileApp/ExploreMobileApp.jsx";
-import BlogSection from "./BlogSection/BlogSection.jsx";
 import Patners from "./Patners/Patners.jsx";
 
 function HomePage() {
@@ -18,7 +17,6 @@ function HomePage() {
       <WhoNeedsSoftware />
       <ExploreMobileApp />
       <Testimonials />
-      <BlogSection />
       <Patners />
     </>
   );

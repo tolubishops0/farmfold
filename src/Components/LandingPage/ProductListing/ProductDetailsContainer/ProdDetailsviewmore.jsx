@@ -100,11 +100,11 @@ function ProdDetailsviewmore({ allOpenMarketPlaceProducts, alladsloading }) {
                       />
                       <CardContent sx={{ ...styles.details }}>
                         <Typography
-                          sx={{ ...styles.name }}
+                          sx={{ ...styles.productname }}
                           gutterBottom
                           variant="h5"
                           component="div">
-                          {item?.product_name}
+                          {item?.name}
                         </Typography>
                         <Box
                           sx={{

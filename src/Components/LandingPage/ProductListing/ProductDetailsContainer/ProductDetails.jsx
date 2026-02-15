@@ -533,7 +533,7 @@ function ProductDetails() {
         product_name: foundProduct.name,
         file_path: foundProduct.image,
         desc: foundProduct.description,
-        price_per_unit: parseFloat(foundProduct.price.replace(/[^\d.]/g, "")),
+        price_per_unit: foundProduct.price,
         currency: "₦",
         available_quantity: "In Stock",
         unit_of_measurement: foundProduct.unit.replace("per ", ""),
@@ -569,6 +569,8 @@ function ProductDetails() {
   const otherImgs =
     productDetail?.other_images?.map((img) => ({ file_path: img })) || [];
   const newImgArr = [...defaultImg, ...otherImgs];
+
+  const otherProd = products.filter((prod) => prod.id !== Number(productId));
 
   const RightDetails = () => (
     <>
@@ -738,7 +740,7 @@ function ProductDetails() {
         </Box>
         <ProdDetailsviewmore
           alladsloading={loading}
-          allOpenMarketPlaceProducts={products}
+          allOpenMarketPlaceProducts={otherProd}
         />
       </Box>
 

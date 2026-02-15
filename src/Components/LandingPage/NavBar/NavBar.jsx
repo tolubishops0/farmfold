@@ -12,7 +12,6 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { logoRedirection } from "../../../Services/commonService/commonService";
 import "../css/style.css";
 import { DASHBOARD } from "../../../Routes/Routes";
-import { logout } from "../../../Services/commonService/commonService";
 import menu from "../../../Assets/Images/Group 88.png";
 // import rightarr from "../Images/navrightarrow.svg";
 import navrigtarrow from "../Homepage/Images/navrightarrow.svg";
@@ -40,9 +39,9 @@ const pagessmall = [
   { label: "About Us", link: "/about-us" },
   { label: "Marketplace", link: "/view-marketplace" },
   { label: "FAQs", link: "/faqs" },
-  { label: "Blogs", link: "/blog" },
-  { label: "Log In", link: "https://web.ajeoba.com/signin" },
-  { label: "Sign Up", link: "https://web.ajeoba.com/select-user-role" },
+  // { label: "Blogs", link: "/blog" },
+  { label: "Log In", link: "#" },
+  { label: "Sign Up", link: "#" },
 ];
 
 function ResourceNavItem({ label, innerLinks, setInnerResourceLink }) {
@@ -182,13 +181,15 @@ function ResponsiveAppBar() {
             gap="2rem">
             <Typography
               variant="h6"
-              noWrap
+              // noWrap
               component="a"
               href="#app-bar-with-responsive-menu"
               // onClick={() => logoRedirection()}
               sx={{
-                mr: 2,
+                // mr: 2,
                 display: "flex",
+                width: "30px",
+                height: "30px",
               }}>
               <img src={logo} alt="Logo" />
             </Typography>
@@ -340,13 +341,11 @@ function ResponsiveAppBar() {
 
                     display: "flex",
                     zIndex: 999,
-
+                    width: "30px",
+                    height: "30px",
                     flexGrow: 1,
                   }}>
-                  <img
-                    src="https://ajeoba-website.oss-eu-central-1.aliyuncs.com/compressed-images/compressed-images/logo_ax0dgb.svg"
-                    alt="Logo"
-                  />
+                  <img src={logo} alt="Logo" />
                 </Typography>
               )}
             </Box>
@@ -363,88 +362,81 @@ function ResponsiveAppBar() {
               </IconButton>
             </Box>
             {openSideBar && <CustomDivider />}
-            {openSideBar && (
-              <Box
-                sx={{
-                  background: "white",
-                  width: "100%",
-                  position: "absolute",
-                  height: "100vh",
-                  top: "0",
-                  right: "0",
-                  left: "0",
-                  zIndex: 100,
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "2rem",
-                  justifyContent: "flex-start",
-                  padding: "6rem 0",
-                  alignItems: "center",
-                  opacity: isBoxVisible ? "1" : "0",
-                  transition: "opacity 3s ease-in-out",
-                  "@media (max-width: 768px)": {
-                    gap: "2rem",
-                  },
-                  "@media (max-width: 500px)": {
-                    gap: "1.5rem",
-                  },
-                  "@media (max-width: 450px)": {
-                    gap: "1rem",
-                  },
-                }}>
-                {pagessmall.map((page, index) => (
-                  <>
-                    {page.label === "Sign Up" ? (
-                      <>
+            {/* Notice: No && here! We keep the Box rendered so it can animate */}
+            <Box
+              sx={{
+                background: "white",
+                width: "100%",
+                position: "fixed",
+                height: "100vh",
+                top: "0",
+                right: "0",
+                zIndex: 100,
+                display: "flex",
+                flexDirection: "column",
+                gap: "2rem",
+                justifyContent: "flex-start",
+                padding: "6rem 0",
+                alignItems: "center",
+
+                // --- SLIDE ANIMATION LOGIC ---
+                transition: "transform 0.4s ease-in-out",
+                transform: openSideBar ? "translateX(0)" : "translateX(100%)",
+                // -----------------------------
+
+                "@media (max-width: 768px)": { gap: "2rem" },
+                "@media (max-width: 500px)": { gap: "1.5rem" },
+                "@media (max-width: 450px)": { gap: "1rem" },
+              }}>
+              {pagessmall.map((page, index) => (
+                <React.Fragment key={index}>
+                  {page.label === "Sign Up" ? (
+                    <Typography
+                      onClick={() => (window.location.href = page.link)}
+                      sx={{
+                        fontSize: "1rem", // Fixed typo: 'fontsize' to 'fontSize'
+                        lineHeight: "1.91rem",
+                        fontWeight: 700,
+                        color: "white",
+                        fontFamily: "DM Sans",
+                        background: "#006D33",
+                        width: "70%",
+                        height: "3rem",
+                        textAlign: "center",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                      }}>
+                      {!userToken ? page.label : "Sign out"}
+                    </Typography>
+                  ) : (
+                    <>
+                      {page.label === "Log In" && userToken ? null : (
                         <Typography
-                          onClick={() => (window.location.href = page.link)}
+                          onClick={() => {
+                            setOpenSideBar(false); // Close menu when clicking a link
+                            page.label === "Log In"
+                              ? (window.location.href = page.link)
+                              : navigate(page.link);
+                          }}
                           sx={{
-                            fontsize: "1rem",
+                            fontSize: "1rem", // Fixed typo
                             lineHeight: "1.91rem",
                             fontWeight: 700,
-                            color: "white",
+                            color: "#2E2E2E",
                             fontFamily: "DM Sans",
-                            background: "#006D33",
-                            width: "70%",
-                            height: "3rem",
-                            textAlign: "center",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: "4px",
                             cursor: "pointer",
-                          }}
-                          key={index}>
-                          {!userToken ? page.label : "Sign out"}
+                          }}>
+                          {page.label}
                         </Typography>
-                      </>
-                    ) : (
-                      <>
-                        {page.label === "Log In" && userToken ? null : (
-                          <Typography
-                            onClick={() =>
-                              page.label === "Log In"
-                                ? (window.location.href = page.link)
-                                : navigate(page.link)
-                            }
-                            sx={{
-                              fontsize: "1rem",
-                              lineHeight: "1.91rem",
-                              fontWeight: 700,
-                              color: "#2E2E2E",
-                              fontFamily: "DM Sans",
-                              cursor: "pointer",
-                            }}
-                            key={index}>
-                            {page.label}
-                          </Typography>
-                        )}
-                      </>
-                    )}
-                  </>
-                ))}
-              </Box>
-            )}
+                      )}
+                    </>
+                  )}
+                </React.Fragment>
+              ))}
+            </Box>
           </>
         )}
       </Toolbar>

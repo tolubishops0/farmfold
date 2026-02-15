@@ -20,7 +20,6 @@ import {
 import { showToast } from "../../../../Services/toast.js";
 
 function ProductDetails() {
-  
   const navigate = useNavigate();
   const { id: productId, productname: productType } = useParams();
   const isSmallScreen = useMediaQuery("(max-width:1000px)");
@@ -30,85 +29,91 @@ function ProductDetails() {
     skip: SKIP,
   });
 
-  const [allOpenMarketPlaceProducts, setAllOpenMarketPlaceProducts] = useState(null)
-  const [alladsloading, setAlladsloading] = useState(null)
+  const [allOpenMarketPlaceProducts, setAllOpenMarketPlaceProducts] =
+    useState(null);
+  const [alladsloading, setAlladsloading] = useState(null);
 
-  const [productDetail, setProductDetail] = useState(null)
-  const [productadloadingbyid, setProductAdLoadingById] = useState(null)
+  const [productDetail, setProductDetail] = useState(null);
+  const [productadloadingbyid, setProductAdLoadingById] = useState(null);
 
-  const [inputActiveAdDetail, setInputActiveAdDetail] = useState(null)
-  const [inputadloadingbyid, setInputadloadingbyid] = useState(null)
+  const [inputActiveAdDetail, setInputActiveAdDetail] = useState(null);
+  const [inputadloadingbyid, setInputadloadingbyid] = useState(null);
 
   const fetchData = (searchObject) => {
-
-    setAlladsloading(true)
+    setAlladsloading(true);
     let q = Object.keys(searchObject)
-             .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(searchObject[k]))
-             .join('&');
+      .map(
+        (k) =>
+          encodeURIComponent(k) + "=" + encodeURIComponent(searchObject[k]),
+      )
+      .join("&");
 
-    let url = `${process.env.REACT_APP_BASE_URL}/api/public/trading/marketplace?` + q;
+    let url =
+      `${process.env.REACT_APP_BASE_URL}/api/public/trading/marketplace?` + q;
 
     fetch(`${url}`, {
       method: "get",
       headers: {
-        'Context-Type': 'application/json',
-      }
+        "Context-Type": "application/json",
+      },
     })
-    .then(response => response.json())
+      .then((response) => response.json())
       .then((res) => {
         setAllOpenMarketPlaceProducts(res?.data);
-        setAlladsloading(false)
+        setAlladsloading(false);
       })
       .catch((err) => {
         showToast(err.message, "error");
       });
-    
-  }
+  };
 
   useEffect(() => {
     let searchObject = {
       limit: query.limit,
       skip: query.skip,
     };
-    fetchData(searchObject)
+    fetchData(searchObject);
   }, []);
 
   const fetchDataDetail = (id, endpoint, product_type) => {
-
     if (product_type === "farmproduce") {
-      setProductAdLoadingById(true)
+      setProductAdLoadingById(true);
     } else if (product_type === "farminput") {
-      setInputadloadingbyid(true)
+      setInputadloadingbyid(true);
     }
-    
+
     let url = `${process.env.REACT_APP_BASE_URL}/${endpoint}/${id}`;
 
     fetch(`${url}`, {
       method: "get",
       headers: {
-        'Context-Type': 'application/json',
-      }
+        "Context-Type": "application/json",
+      },
     })
-    .then(response => response.json())
+      .then((response) => response.json())
       .then((res) => {
         if (product_type === "farmproduce") {
           setProductDetail(res?.data?.AdvertisemetDetail);
-          setProductAdLoadingById(false)
+          setProductAdLoadingById(false);
         } else if (product_type === "farminput") {
           setInputActiveAdDetail(res?.data?.advertisementDetail);
-          setInputadloadingbyid(false)
+          setInputadloadingbyid(false);
         }
       })
       .catch((err) => {
         showToast(err.message, "error");
       });
-  }
+  };
 
   useEffect(() => {
     if (productType === "farmproduce") {
-      fetchDataDetail(productId, "api/public/trading/advertisement", productType)
+      fetchDataDetail(
+        productId,
+        "api/public/trading/advertisement",
+        productType,
+      );
     } else if (productType === "farminput") {
-      fetchDataDetail(productId, "api/public/input/advertisement", productType)
+      fetchDataDetail(productId, "api/public/input/advertisement", productType);
     }
   }, [productId, productType]);
 
@@ -161,9 +166,7 @@ function ProductDetails() {
                     src={
                       productType === "farmproduce"
                         ? generateImageUrl(productDetail?.file_path)
-                        : generateImageUrl(
-                            inputActiveAdDetail?.url
-                          )
+                        : generateImageUrl(inputActiveAdDetail?.url)
                     }
                     alt={"product-name"}
                     style={{ ...styles.imgsm }}
@@ -186,9 +189,7 @@ function ProductDetails() {
                     src={
                       productType === "farmproduce"
                         ? generateImageUrl(productDetail?.file_path)
-                        : generateImageUrl(
-                            inputActiveAdDetail?.url
-                          )
+                        : generateImageUrl(inputActiveAdDetail?.url)
                     }
                     alt={"product-name"}
                     style={{ ...styles.imglg }}
@@ -221,9 +222,7 @@ function ProductDetails() {
               <Typography sx={{ ...styles.proddetailname }}>
                 {productType === "farmproduce"
                   ? textCapitalize(productDetail?.product_name)
-                  : textCapitalize(
-                      inputActiveAdDetail?.input_name
-                    )}
+                  : textCapitalize(inputActiveAdDetail?.input_name)}
               </Typography>
               <Typography sx={{ ...styles.proddetailseller }}>
                 <Typography sx={{ ...styles.proddetailsellernamecontainer }}>
@@ -241,24 +240,12 @@ function ProductDetails() {
                 <Box
                   sx={{
                     ...styles.ratingContainer,
-                  }}
-                >
+                  }}>
                   <Typography sx={{ ...styles.rating }}>
-                    {productType === "farmproduce"
-                      ? productDetail?.rating === null
-                        ? "0.00"
-                        : productDetail?.rating
-                      : inputActiveAdDetail?.rating ===
-                        null
-                      ? "0.00"
-                      : inputActiveAdDetail?.rating}
+                    {productDetail?.rating}
                   </Typography>
                   <AjRating
-                    defaultValue={
-                      productType === "farmproduce"
-                        ? productDetail?.rating
-                        : inputActiveAdDetail?.rating
-                    }
+                    defaultValue={productDetail?.rating}
                     readOnly={true}
                     size="small"
                   />
@@ -282,38 +269,20 @@ function ProductDetails() {
               <Typography sx={{ ...styles.proddetailcostcontainer }}>
                 <Typography sx={{ ...styles.proddetailcost }}>
                   {" "}
-                  {productType === "farmproduce"
-                    ? numberWithCommas(
-                        productDetail?.price_per_unit,
-                        productDetail?.currency
-                      )
-                    : numberWithCommas(
-                        inputActiveAdDetail?.price_per_unit,
-                        inputActiveAdDetail?.currency
-                      )}
+                  {productDetail?.price}
                 </Typography>
                 <Typography
-                  sx={{ ...styles.proddetailsellerqty, marginLeft: 1 }}
-                >
-                  {productType === "farmproduce"
-                    ? textCapitalize(
-                        `(per ${productDetail?.unit_of_measurement})`
-                      )
-                    : textCapitalize(
-                        `(per ${inputActiveAdDetail?.unit_of_measurement})`
-                      )}
+                  sx={{ ...styles.proddetailsellerqty, marginLeft: 1 }}>
+                  {textCapitalize(`(per ${productDetail?.unit})`)}
                 </Typography>
               </Typography>
               <Button
-                onClick={() => {
-                  handleBuy(productId)
-                  window.location.href="https://ajeoba.com"
-
-                }
-                }
-                sx={{ ...styles.proddetailbuy }}
-              >
-                Buy Now
+                // onClick={() => {
+                //   handleBuy(productId);
+                //   window.location.href = "https://ajeoba.com";
+                // }}
+                sx={{ ...styles.proddetailbuy }}>
+                Buy Nojvjjw
               </Button>
             </Box>
           )}{" "}

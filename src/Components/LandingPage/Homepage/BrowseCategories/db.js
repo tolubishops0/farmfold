@@ -7,9 +7,9 @@ export const products = [
     rating: 4,
     category: "value-added",
     image:
-      "https://images.unsplash.com/photo-1621460245199-563b7352377a?auto=format&fit=crop&q=80&w=800",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGbuNvNYC6aJACM6eUymdaSAcl8RKCYxgFqjpbZQwThg&s",
     other_images: [
-      "https://images.unsplash.com/photo-1590779033100-9f60702a0559?auto=format&fit=crop&q=80&w=800",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGr70Xw6sGolrW3-Qw4-YJQR1OD1RYGulnJIYlvFoRig&s",
     ],
     description: "Pure red palm oil with no additives.",
   },
@@ -21,9 +21,9 @@ export const products = [
     rating: 4,
     category: "farm-produce",
     image:
-      "https://images.unsplash.com/photo-1595347097560-69238724e7bd?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1730815048561-45df6f7f331d?q=80&w=1031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     other_images: [
-      "https://images.unsplash.com/photo-1587049016473-b1ec904f6734?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1617130094141-532436117aa1?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ],
     description: "Freshly harvested yam tubers grown locally.",
   },
@@ -52,8 +52,8 @@ export const products = [
     image:
       "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&q=80&w=800",
     other_images: [
-      "https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1561136594-7f68413bac99?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1582284540020-8acbe03f4924?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG9tYXRvZXN8ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1467020323552-36f7bf0e30e6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRvbWF0b2VzfGVufDB8fDB8fHww",
     ],
     description: "Juicy tomatoes for cooking and sauces.",
   },
@@ -65,9 +65,9 @@ export const products = [
     rating: 4,
     category: "value-added",
     image:
-      "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1587049352851-8d4e89133924?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG9uZXl8ZW58MHx8MHx8fDA%3D",
     other_images: [
-      "https://images.unsplash.com/photo-1558583055-d7ac00b1adca?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvbmV5fGVufDB8fDB8fHww",
     ],
     description: "Pure honey harvested from local beehives.",
   },
@@ -79,9 +79,9 @@ export const products = [
     rating: 4,
     category: "farm-produce",
     image:
-      "https://images.unsplash.com/photo-1621245032074-9f705146f906?auto=format&fit=crop&q=80&w=800",
+      "https://plus.unsplash.com/premium_photo-1725467479101-556af13a7220?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2Fzc2F2YXxlbnwwfHwwfHx8MA%3D%3D",
     other_images: [
-      "https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1757283961570-682154747d9c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNhc3NhdmF8ZW58MHx8MHx8fDA%3D",
     ],
     description: "High quality cassava suitable for processing.",
   },
@@ -93,9 +93,9 @@ export const products = [
     rating: 2,
     category: "value-added",
     image:
-      "https://images.unsplash.com/photo-1628153326129-6184918f08f8?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1592518530101-c7413d0c1118?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2Fycml8ZW58MHx8MHx8fDA%3D",
     other_images: [
-      "https://images.unsplash.com/photo-1628153215277-2f6388909477?auto=format&fit=crop&q=80&w=800",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQQovFq6-afHSkhHV9VdfsAC8qdj1SkEHZNw&s",
     ],
     description: "Well processed crispy garri.",
   },
@@ -137,9 +137,9 @@ export const products = [
     rating: 4,
     category: "farm-produce",
     image:
-      "https://images.unsplash.com/photo-1520624395681-7f641249764a?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1552709607-08d00227833d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGxhbnRhaW58ZW58MHx8MHx8fDA%3D",
     other_images: [
-      "https://images.unsplash.com/photo-1601055283742-990868f7f070?auto=format&fit=crop&q=80&w=800",
+      "https://media.istockphoto.com/id/1169934541/photo/plantain-banana-i.webp?a=1&b=1&s=612x612&w=0&k=20&c=9pqJdLWgNFK4NgXLpDGiR3DiKv1A6kQDWb8XcGOtc6o=",
     ],
     description: "Naturally ripened plantain.",
   },
@@ -153,7 +153,7 @@ export const products = [
     image:
       "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80&w=800",
     other_images: [
-      "https://images.unsplash.com/photo-1524179089-08a8e1008064?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1757801333068-d52a3e448cde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JvdW5kbnV0JTIwb2lsfGVufDB8fDB8fHww",
     ],
     description: "Naturally extracted groundnut oil.",
   },
@@ -165,7 +165,7 @@ export const products = [
     rating: 4,
     category: "farm-produce",
     image:
-      "https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&q=80&w=800",
+      "https://plus.unsplash.com/premium_photo-1705338026411-00639520a438?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cmljZXxlbnwwfHwwfHx8MA%3D%3D",
     other_images: [
       "https://images.unsplash.com/photo-1536679545707-c76a741d7a50?auto=format&fit=crop&q=80&w=800",
     ],
@@ -221,15 +221,15 @@ export const products = [
     rating: 4,
     category: "farm-produce",
     image:
-      "https://images.unsplash.com/photo-1586201327693-86629f8bf827?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1686820740687-426a7b9b2043?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmljZXxlbnwwfHwwfHx8MA%3D%3D",
     other_images: [
-      "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?auto=format&fit=crop&q=80&w=800",
+      "https://plus.unsplash.com/premium_photo-1674654419403-1a80edb26881?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHJpY2V8ZW58MHx8MHx8fDA%3D",
     ],
     description: "Stone free locally processed rice.",
   },
   {
     id: 17,
-    name: "Dried Pepper",
+    name: "Cabbage",
     price: "₦1,300",
     unit: "per kg",
     rating: 5,
@@ -238,7 +238,7 @@ export const products = [
       "https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?auto=format&fit=crop&q=80&w=800",
     other_images: [
       "https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1518552395724-41d3c6757134?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1668120082831-e83f387e3461?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FiYWdlfGVufDB8fDB8fHww",
     ],
     description: "Sun dried pepper with strong aroma.",
   },
@@ -278,9 +278,10 @@ export const products = [
     rating: 2,
     category: "farm-produce",
     image:
-      "https://images.unsplash.com/photo-1588253518679-122045585502?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1601077698487-0047c339d313?q=80&w=1031&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     other_images: [
-      "https://images.unsplash.com/photo-1564663805174-0683a316a761?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1763221126437-ebf2339c7b67?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGZyZXNoJTIwcGVwcGVyfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1609869882537-6a860e45a0d6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZnJlc2glMjBwZXBwZXJ8ZW58MHx8MHx8fDA%3D",
     ],
     description: "Fresh red pepper harvested daily.",
   },
