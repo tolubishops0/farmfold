@@ -574,7 +574,7 @@ export const styles = {
   productimgContainer: {
     width: "100%",
     height: "23rem ",
-    maxHeight: "25rem ",
+    maxHeight: "23rem ",
   },
   leftimagescontainer: {
     display: "flex",

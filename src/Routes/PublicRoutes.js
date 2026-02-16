@@ -1,4 +1,3 @@
-import React, { lazy } from "react";
 import {
   FAQS,
   ROOT,
@@ -9,29 +8,13 @@ import {
   WHO_NEEDS_SOFTWARE,
 } from "./Routes";
 
-const LandingPage = lazy(() => import("../Homepage/HomePage.jsx"));
-
-const AboutUsView = lazy(
-  () => import("../otherPages/AboutUsPage/AboutUsPage.jsx"),
-);
-
-const FaqsView = lazy(() => import("../otherPages/Faqs/Faqs.jsx"));
-
-const WhoNeedsSoftware = lazy(
-  () => import("../otherPages/WhoNeedsTheSoftware/WhoNeedsTheSoftware.jsx"),
-);
-
-const ValuePropsitionsView = lazy(
-  () => import("../otherPages/ValPropositions/Valuepropostions.jsx"),
-);
-
-const ViewMarketplace = lazy(
-  () => import("../otherPages/Market/MarketPlace.jsx"),
-);
-
-const SelectedProductDetails = lazy(
-  () => import("../otherPages/Market/Productdetail/Productdetail.jsx"),
-);
+import LandingPage from "../Homepage/HomePage.jsx";
+import AboutUsView from "../otherPages/AboutUsPage/AboutUsPage.jsx";
+import FaqsView from "../otherPages/Faqs/Faqs.jsx";
+import WhoNeedsSoftware from "../otherPages/WhoNeedsTheSoftware/WhoNeedsTheSoftware.jsx";
+import ValuePropsitionsView from "../otherPages/ValPropositions/Valuepropostions.jsx";
+import ViewMarketplace from "../otherPages/Market/MarketPlace.jsx";
+import SelectedProductDetails from "../otherPages/Market/Productdetail/Productdetail.jsx";
 
 export const publicRoutes = [
   {

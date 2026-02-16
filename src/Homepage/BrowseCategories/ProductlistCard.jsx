@@ -72,7 +72,7 @@ function ProductlistCard(props) {
           {" "}
           {props?.landingPageList?.length > 0 ? (
             <Box sx={browseCategry.activeadlistContainer}>
-              {props?.landingPageList?.splice(0, 5)?.map((item) => (
+              {props?.landingPageList?.slice(0, 5)?.map((item) => (
                 <Card sx={browseCategry.activeadlistCard} key={item.id}>
                   <Link to={urlLink(item)} style={{ textDecoration: "none" }}>
                     <CardActionArea>

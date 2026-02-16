@@ -20,7 +20,7 @@ import MarketViewMoreList from "../MarketViewMoreList.jsx";
 function Productdetail() {
   const navigate = useNavigate();
   const products = useProducts();
-  const { id: productId } = useParams();
+  const { id } = useParams();
   const isSmallScreen = useMediaQuery("(max-width: 991px)");
 
   const [productDetail, setProductDetail] = useState(null);
@@ -32,17 +32,11 @@ function Productdetail() {
   const [activeImageUrl, setActiveImageUrl] = useState(null);
   const [activeImageUrlOnPopUp, setactiveImageUrlOnPopUp] = useState(null);
   const [expandImage, setExpandImage] = useState(false);
-
-  // console.log({ products }, "outside");
-  // console.log(typeof productId);
+  const productId = Number(id);
 
   useEffect(() => {
     setLoading(true);
-    const foundProduct = products?.find(
-      (p) => String(p.id) === String(productId),
-    );
-    // console.log({ foundProduct });
-    // console.log({ products }, "inside");
+    const foundProduct = products?.find((p) => p.id === productId);
 
     if (foundProduct) {
       const mappedProduct = {
@@ -87,16 +81,7 @@ function Productdetail() {
     productDetail?.other_images?.map((img) => ({ file_path: img })) || [];
   const newImgArr = [...defaultImg, ...otherImgs];
 
-  const otherProd = products?.filter((prod) => prod.id !== Number(productId));
-
-  // console.log("🔍 ProductDetail Debug:");
-  console.log("Products from context:", products);
-  console.log("Products length:", products?.length);
-  // console.log(
-  //   "Product IDs:",
-  //   products?.map((p) => p.id),
-  // );
-  // console.log("Looking for ID:", productId, "Type:", typeof productId);
+  const otherProd = products?.filter((prod) => prod.id !== productId);
 
   const RightDetails = () => (
     <>

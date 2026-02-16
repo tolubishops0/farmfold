@@ -24,16 +24,13 @@ const App = () => {
               <Route
                 key={index}
                 path={publicRouteDetail.path}
-                element={
-                  <Suspense fallback={<div>Loading...</div>}>
-                    {publicRouteDetail.component}
-                  </Suspense>
-                }
+                element={publicRouteDetail.component}
               />
             ))}
             <Route path="*" element={<PageNotFound />} />
           </Routes>
           <Footer />
+          {/* <ToastContainer /> */}
         </BrowserRouter>
       </ThemeProvider>
     </ProductsProvider>

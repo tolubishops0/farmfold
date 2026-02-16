@@ -34,8 +34,6 @@ function MarketViewMoreList({ allOpenMarketPlaceProducts, alladsloading }) {
     updateArrowVisibility(newScrollPosition);
   };
 
-  console.log({ allOpenMarketPlaceProducts });
-
   const updateArrowVisibility = (scrollPos) => {
     const container = containerRef.current;
     const maxScrollLeft = container.scrollWidth - container.clientWidth;
