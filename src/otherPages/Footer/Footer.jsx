@@ -88,7 +88,7 @@ function Footer() {
             <Link to="/faqs" style={{ textDecoration: "none" }}>
               <Typography sx={footer.midcontentsText}>FAQs </Typography>
             </Link>
-            <Link to="/blog" style={{ textDecoration: "none" }}>
+            <Link to="/" style={{ textDecoration: "none" }}>
               <Typography sx={footer.midcontentsText}>Blog </Typography>
             </Link>
           </Box>
