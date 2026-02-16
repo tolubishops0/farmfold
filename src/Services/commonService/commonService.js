@@ -1,5 +1,5 @@
 import React from "react";
-import { getUserData, encrypt } from "../localStorageService";
+import { getUserData } from "../localStorageService";
 import {
   DASHBOARD,
   SIGNIN,
@@ -15,7 +15,6 @@ import * as _ from "lodash";
 import getSymbolFromCurrency from "currency-symbol-map";
 import { ROLES, disabledRoutes } from "../../Constant/RoleConstant";
 import {
-  PASSWORD_ENCRYPTION_SECRET,
   customSignUpStepOptions,
   signUpStepOptions,
   SEARCH_FILTER_REGEX,
@@ -80,7 +79,6 @@ export const getDisabledPath = (roleId, path, status, subscriptionExpiry) => {
   }
 };
 
-
 export const maskFields = (fieldData) => {
   return fieldData?.replace(/.(?=.{3})/g, "* ");
 };
@@ -94,7 +92,7 @@ export const getPreviousYearDate = () => {
   return new Date(
     currDate.getFullYear() - 1,
     currDate.getMonth(),
-    currDate.getDate()
+    currDate.getDate(),
   );
 };
 
@@ -103,7 +101,7 @@ export const getTodaysDate = () => {
   return new Date(
     currDate.getFullYear(),
     currDate.getMonth(),
-    currDate.getDate()
+    currDate.getDate(),
   );
 };
 
@@ -112,7 +110,7 @@ export const getNextYearDate = () => {
   return new Date(
     currDate.getFullYear() + 2,
     currDate.getMonth(),
-    currDate.getDate()
+    currDate.getDate(),
   );
 };
 
@@ -123,7 +121,7 @@ export const mergeDateTime = (date, time) => {
   const formattedTime = moment(selectedTime, "HH:mm:ss").format("LTS");
   return moment(
     `${formattedDate} ${formattedTime}`,
-    "YYYY-MM-DD HH:mm:ss"
+    "YYYY-MM-DD HH:mm:ss",
   ).format();
 };
 
@@ -183,8 +181,7 @@ export const toastMsgEllipsis = (errorMessage) => {
           style={{
             ...commonStyles.toastMsgEllipsis,
             ...commonStyles.textCapitalize,
-          }}
-        >
+          }}>
           {errMsg[1]}
         </div>
       );
@@ -238,7 +235,7 @@ export const numberWithCommass = (x, currencyCode) => {
       {
         style: "currency",
         currency: currencyCode,
-      }
+      },
     ).format(x);
 
     const [currencySymbol, amount] = formattedAmount.split(/\s+/);
@@ -249,7 +246,7 @@ export const numberWithCommass = (x, currencyCode) => {
 export const numberWithCommassNoCurrency = (x, currencyCode) => {
   if (currencyCode) {
     const formattedAmount = new Intl.NumberFormat(
-      `en-${currencyCode?.substring(0, 2)}`
+      `en-${currencyCode?.substring(0, 2)}`,
     ).format(x);
 
     const [amount] = formattedAmount.split(/\s+/);

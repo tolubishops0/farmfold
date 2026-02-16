@@ -1,4 +1,3 @@
-import React from "react";
 import { Box } from "@mui/material";
 import { commonStyles } from "../../Style/CommonStyle";
 import AjDetailData from "../AjDetailData/AjDetailData";
@@ -46,7 +45,7 @@ const AjOpenProductDetails = (props) => {
               <AjDetailData
                 metaData="Quantity"
                 data={`${data?.available_quantity} ${textCapitalize(
-                  data?.unit_of_measurement
+                  data?.unit_of_measurement,
                 )}`}
                 styleData2={{
                   ...styles.productNameWidth,

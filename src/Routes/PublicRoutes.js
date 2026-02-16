@@ -1,49 +1,36 @@
 import React, { lazy } from "react";
 import {
   FAQS,
-  BLOGS,
   ROOT,
   VALUE_PROPOSITION,
   ABOUT_US,
-  PRODUCT_LISTING_EXPANDED,
-  SINGLE_BLOG_PAGE,
+  VIEW_MARKETPLACE,
   SELECTED_PRODUCT_DETAILS,
   WHO_NEEDS_SOFTWARE,
 } from "./Routes";
-const AboutUsView = lazy(() =>
-  import("../Components/LandingPage/AboutUsPage/AboutUsPage.jsx")
+
+const LandingPage = lazy(() => import("../Homepage/HomePage.jsx"));
+
+const AboutUsView = lazy(
+  () => import("../otherPages/AboutUsPage/AboutUsPage.jsx"),
 );
 
-const FaqsView = lazy(() => import("../Containers/Faqs/Faqs.jsx"));
+const FaqsView = lazy(() => import("../otherPages/Faqs/Faqs.jsx"));
 
-const BlogsView = lazy(() => import("../Components/LandingPage/Blog/Blog"));
-
-const SingleBlogPostView = lazy(() =>
-  import("../Components/LandingPage/Blog/SingleBlogPage")
+const WhoNeedsSoftware = lazy(
+  () => import("../otherPages/WhoNeedsTheSoftware/WhoNeedsTheSoftware.jsx"),
 );
 
-const LandingPage = lazy(() => import("../Components/LandingPage/LandingPage"));
-
-const ExpandedProductListing = lazy(() =>
-  import(
-    "../Components/LandingPage/ProductListing/ProductListingExpanded/ProductListExpanded"
-  )
+const ValuePropsitionsView = lazy(
+  () => import("../otherPages/ValPropositions/Valuepropostions.jsx"),
 );
 
-const SelectedProductDetails = lazy(() =>
-  import(
-    "../Components/LandingPage/ProductListing/ProductDetailsContainer/ProductDetailsContainers.jsx"
-  )
+const ViewMarketplace = lazy(
+  () => import("../otherPages/Market/MarketPlace.jsx"),
 );
 
-const WhoNeedsSoftware = lazy(() =>
-  import(
-    "../Components/LandingPage/WhoNeedsTheSoftware/WhoNeedsTheSoftware.jsx"
-  )
-);
-
-const ValuePropsitionsView = lazy(() =>
-  import("../Components/LandingPage/ValPropositions/Valuepropostions.jsx")
+const SelectedProductDetails = lazy(
+  () => import("../otherPages/Market/Productdetail/Productdetail.jsx"),
 );
 
 export const publicRoutes = [
@@ -64,23 +51,15 @@ export const publicRoutes = [
     component: <AboutUsView />,
   },
   {
-    path: BLOGS,
-    component: <BlogsView />,
+    path: WHO_NEEDS_SOFTWARE,
+    component: <WhoNeedsSoftware />,
   },
   {
-    path: SINGLE_BLOG_PAGE,
-    component: <SingleBlogPostView />,
-  },
-  {
-    path: PRODUCT_LISTING_EXPANDED,
-    component: <ExpandedProductListing />,
+    path: VIEW_MARKETPLACE,
+    component: <ViewMarketplace />,
   },
   {
     path: SELECTED_PRODUCT_DETAILS,
     component: <SelectedProductDetails />,
-  },
-  {
-    path: WHO_NEEDS_SOFTWARE,
-    component: <WhoNeedsSoftware />,
   },
 ];

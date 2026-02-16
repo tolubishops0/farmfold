@@ -229,14 +229,9 @@ export const ADMIN_PRODUCT_ORDER_QA_DETAIL = "detail/:id";
 export const PRODUCT_ORDER_QA = "/product-order-qa";
 export const PRODUCT_ORDER_QA_UPLOAD_REPORT = "report/:id";
 
-export const VALUE_PROPOSITION = "our-value-propositions";
-export const ABOUT_US = "about-us";
 export const BLOGS = "/blog";
 export const SINGLE_BLOG_PAGE = "/blog/:id";
 
-export const PRODUCT_LISTING_EXPANDED =
-  "/view-marketplace/:producttype?/:categoryfilter?";
-export const SELECTED_PRODUCT_DETAILS = "/details/:id";
 export const INPUT_LISTING_EXPANDED = "/inputs";
 export const SIGNUP_BUYER_PAGE = "/signup-buyer";
 export const SIGNUPOTPBUYERVERIFICATION = "/signupotp-buyer";
@@ -246,3 +241,7 @@ export const BANK_MANAGEMENT = "/bank-list";
 export const BANK_CARD_REQUEST = "/card-request";
 
 export const WHO_NEEDS_SOFTWARE = "/personas";
+export const VIEW_MARKETPLACE = "/view-marketplace";
+export const SELECTED_PRODUCT_DETAILS = "/details/:id";
+export const VALUE_PROPOSITION = "our-value-propositions";
+export const ABOUT_US = "about-us";

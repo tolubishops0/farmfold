@@ -1,43 +1,42 @@
 import React, { Suspense } from "react";
-import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
-// import PrivateRoute from "./Routes/PrivateRoute";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import theme from "./Style/theme";
-// import { privateRoutes } from "./Routes/GetPrivateRoutes";
 import { publicRoutes } from "./Routes/PublicRoutes";
 import { ThemeProvider } from "@mui/material";
-
 import { toast } from "react-toastify";
-// import Layout from "./Containers/Layout/Layout";
 
 import "react-toastify/dist/ReactToastify.css";
 import PageNotFound from "./PageNotFound/PageNotFound";
+import { ProductsProvider } from "./chore/ProductContext";
+import Navbar from "../src/otherPages/NavBar/NavBar.jsx";
+import Footer from "../src/otherPages/Footer/Footer.jsx";
 
 toast.configure();
 
 const App = () => {
   return (
-    <div>
+    <ProductsProvider>
       <ThemeProvider theme={theme}>
         <BrowserRouter>
-          <Suspense>
-            <Routes>
-              {publicRoutes.map((publicRouteDetail, index) => {
-                return (
-                  <Route
-                    key={index}
-                    exact
-                    path={publicRouteDetail.path}
-                    element={publicRouteDetail.component}
-                  />
-                );
-              })}
-
-              <Route path="*" element={<PageNotFound />} />
-            </Routes>
-          </Suspense>
+          <Navbar />
+          <Routes>
+            {publicRoutes.map((publicRouteDetail, index) => (
+              <Route
+                key={index}
+                path={publicRouteDetail.path}
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    {publicRouteDetail.component}
+                  </Suspense>
+                }
+              />
+            ))}
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+          <Footer />
         </BrowserRouter>
       </ThemeProvider>
-    </div>
+    </ProductsProvider>
   );
 };
 

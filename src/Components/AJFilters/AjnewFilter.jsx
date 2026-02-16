@@ -1,34 +1,25 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState } from "react";
 import { Grid, useMediaQuery } from "@mui/material";
 
 import { styles } from "./AjFilterStyles";
 import { allProductOptions } from "../../Constant/AppConstant";
 import AjCheckbox from "../AjCheckBox";
 import AjNewRating from "../AjNewRating";
-import AjLocation from "../AjLocation/AjLocation";
 
 function AjnewFilter({
-  countryFilter,
-  countryFiltersm,
-  stateFilter,
-  stateFiltersm,
-  allproductTypeFilter, //for open marketplace
+  allproductTypeFilter,
   allproductTypeFiltersm,
   ratingFilter,
   ratingFiltersm,
   onCategorySelect,
   onCategorySelectsm,
-  onCountrySelect,
-  onCountrySelectsm,
-  onStateSelect,
-  onStateSelectsm,
+
   handleRatingSelect,
   handleRatingSelectsm,
   // filtersActive,
 }) {
   const isSmallScreen = useMediaQuery("(max-width: 768px)");
 
-  const [stateValue, setStateValue] = useState(null);
   const [selectedProductType, setSelectedProductType] = useState(null);
   const [selectedRatings, setSelectedRatings] = useState(null);
 
@@ -42,23 +33,6 @@ function AjnewFilter({
     const newSelectedProductType = selectedProductType === value ? null : value;
     setSelectedProductType(newSelectedProductType);
     onCategorySelectsm(newSelectedProductType);
-  };
-
-  const countryChangeHandler = (selectedCountry) => {
-    onCountrySelect(selectedCountry.countryId);
-  };
-
-  const countryChangeHandlersm = (selectedCountry) => {
-    onCountrySelectsm(selectedCountry.countryId);
-  };
-
-  const countryStateIdHandler = (selectedState) => {
-    setStateValue(selectedState.stateId);
-    onStateSelect(selectedState.stateId);
-  };
-  const countryStateIdHandlersm = (selectedState) => {
-    setStateValue(selectedState.stateId);
-    onStateSelectsm(selectedState.stateId);
   };
 
   const allRateChangehandlere = (rating) => {
@@ -109,21 +83,6 @@ function AjnewFilter({
           ))}
         </Grid>
       )}
-
-      <AjLocation
-        required={false}
-        isSmallScreen={isSmallScreen}
-        labelStyle={styles.headingLabel}
-        countryFilter={countryFilter}
-        countryFiltersm={countryFiltersm}
-        value={stateValue}
-        stateFilter={stateFilter}
-        stateFiltersm={stateFiltersm}
-        countryChangeHandler={countryChangeHandler}
-        countryChangeHandlersm={countryChangeHandlersm}
-        countryStateIdHandler={countryStateIdHandler}
-        countryStateIdHandlersm={countryStateIdHandlersm}
-      />
 
       {ratingFilter && (
         <Grid sx={{ marginTop: "-.8rem" }}>
