@@ -10,7 +10,7 @@ import InputSupply from "./InputSupply";
 
 function VaLuePrp() {
   return (
-    <div>
+    <>
       <Banner />
       <TitleSection />
       <DigInfra />
@@ -19,7 +19,7 @@ function VaLuePrp() {
       <FinancialServices />
       <MarketArbitrage />
       <InputSupply />
-    </div>
+    </>
   );
 }
 

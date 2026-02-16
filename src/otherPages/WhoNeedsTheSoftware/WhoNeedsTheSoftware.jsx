@@ -1,7 +1,5 @@
 import React from "react";
 import FarmingAssociation from "./FarminAssociations.jsx";
-import NavBar from "../NavBar/NavBar.jsx";
-import Footer from "../Footer/Footer.jsx";
 import Banner from "./Banner.jsx";
 import Title from "./Title.jsx";
 import QualityAss from "./QualityAss.jsx";
@@ -12,8 +10,7 @@ import ExtensionWorkers from "./ExtensionWorkers.jsx";
 
 function WhoNeedsSoftware() {
   return (
-    <div>
-      <NavBar />
+    <>
       <Banner />
       <Title />
       <FarmingAssociation />
@@ -22,8 +19,7 @@ function WhoNeedsSoftware() {
       <InputSupplier />
       <CorpBuyer />
       <ExtensionWorkers />
-      <Footer />
-    </div>
+    </>
   );
 }
 
