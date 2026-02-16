@@ -36,6 +36,7 @@ function MarketListings({ products, loading }) {
                         component="img"
                         height="200"
                         // width="300"
+                        loading="lazy"
                         image={item.image}
                         alt="product"
                       />

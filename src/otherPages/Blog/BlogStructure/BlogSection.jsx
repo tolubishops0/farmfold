@@ -21,7 +21,6 @@ import { commonStyles } from "../../../../Style/CommonStyle";
 // import { showToast } from "../../../../Services/toast";
 
 function BlogSection() {
-
   const [query] = useState({ limit: 3, skip: 0 });
 
   const [blogList, setBlogList] = useState([]);
@@ -31,33 +30,34 @@ function BlogSection() {
   };
 
   const fetchData = (searchObject) => {
-
     let q = Object.keys(searchObject)
-             .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(searchObject[k]))
-             .join('&');
+      .map(
+        (k) =>
+          encodeURIComponent(k) + "=" + encodeURIComponent(searchObject[k]),
+      )
+      .join("&");
 
     fetch(`${process.env.REACT_APP_BASE_URL}/api/public/blogs?` + q, {
       method: "get",
       headers: {
-        'Context-Type': 'application/json',
-      }
+        "Context-Type": "application/json",
+      },
     })
-    .then(response => response.json())
-    .then((res) => {
+      .then((response) => response.json())
+      .then((res) => {
         setBlogList(res?.data?.blog);
       })
-    .catch((err) => {
+      .catch((err) => {
         console.log("Error:", err);
       });
-    
-  }
+  };
 
   useEffect(() => {
     let searchObject = {
       limit: 3,
       skip: 0,
     };
-    fetchData(searchObject)
+    fetchData(searchObject);
   }, [query]);
 
   const generateImageUrl = (item) => {
@@ -89,13 +89,13 @@ function BlogSection() {
                   <Card key={index} sx={blogsection.cardblog}>
                     <Link
                       to={`/blog/${item.id}`}
-                      style={{ textDecoration: "none" }}
-                    >
+                      style={{ textDecoration: "none" }}>
                       <CardActionArea>
                         <CardMedia
                           component="img"
                           height="150"
                           // width="200"
+                          loading="lazy"
                           image={generateImageUrl(item)}
                           alt="product"
                         />
@@ -124,8 +124,7 @@ function BlogSection() {
                           </Typography>
                           <Typography
                             // onClick={readBlogDetails(item.id)}
-                            sx={blogsection.readmore}
-                          >
+                            sx={blogsection.readmore}>
                             Read More{" "}
                             <span>
                               <img
@@ -143,12 +142,10 @@ function BlogSection() {
               </Box>
               <Button
                 sx={blogsection.viewmoreButton}
-                className="slide-bannerTextButton"
-              >
+                className="slide-bannerTextButton">
                 <Link
                   to={`/blog`}
-                  style={{ textDecoration: "none", color: "white" }}
-                >
+                  style={{ textDecoration: "none", color: "white" }}>
                   {" "}
                   view more post
                 </Link>{" "}
@@ -158,8 +155,7 @@ function BlogSection() {
             <Box
               sx={{
                 ...commonStyles.noContentBoxLanifnpage,
-              }}
-            >
+              }}>
               <AjTypography
                 styleData={commonStyles.noDataTextcategories}
                 displayText="No data found"

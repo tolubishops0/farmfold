@@ -573,8 +573,8 @@ export const styles = {
 
   productimgContainer: {
     width: "100%",
-    height: "23rem ",
-    maxHeight: "23rem ",
+    height: "22rem ",
+    maxHeight: "22rem ",
   },
   leftimagescontainer: {
     display: "flex",

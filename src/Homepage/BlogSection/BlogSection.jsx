@@ -36,7 +36,8 @@ function BlogSection() {
   const fetchData = (searchObject) => {
     let q = Object.keys(searchObject)
       .map(
-        (k) => encodeURIComponent(k) + "=" + encodeURIComponent(searchObject[k])
+        (k) =>
+          encodeURIComponent(k) + "=" + encodeURIComponent(searchObject[k]),
       )
       .join("&");
 
@@ -123,6 +124,7 @@ function BlogSection() {
                             <CardMedia
                               component="img"
                               height="150"
+                              loading="lazy"
                               // width="200"
                               image={generateImageUrl(item)}
                               alt="product"

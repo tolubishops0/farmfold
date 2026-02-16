@@ -24,7 +24,7 @@ const InputListing = ({}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [inputActiveAdsList, setInputActiveAdsList] = useState([])
+  const [inputActiveAdsList, setInputActiveAdsList] = useState([]);
   const [data, setData] = useState();
   const [openModal, setOpenModal] = useState(false);
   const [query] = useState({
@@ -33,36 +33,38 @@ const InputListing = ({}) => {
   });
 
   const fetchData = () => {
-
     let searchObject = {
       limit: query.limit,
       skip: query.skip,
     };
 
     let q = Object.keys(searchObject)
-             .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(searchObject[k]))
-             .join('&');
+      .map(
+        (k) =>
+          encodeURIComponent(k) + "=" + encodeURIComponent(searchObject[k]),
+      )
+      .join("&");
 
-    let url = `${process.env.REACT_APP_BASE_URL}/api/public/input/advertisement?` + q;
+    let url =
+      `${process.env.REACT_APP_BASE_URL}/api/public/input/advertisement?` + q;
 
     fetch(`${url}`, {
       method: "get",
       headers: {
-        'Context-Type': 'application/json',
-      }
+        "Context-Type": "application/json",
+      },
     })
-    .then(response => response.json())
+      .then((response) => response.json())
       .then((res) => {
-        setProductListLandingPage(res?.data)
+        setProductListLandingPage(res?.data);
       })
       .catch((err) => {
         showToast(err.message, "error");
       });
-    
-  }
+  };
 
   useEffect(() => {
-    fetchData()
+    fetchData();
   }, [query]);
 
   const handleViewMore = (index) => {
@@ -71,14 +73,16 @@ const InputListing = ({}) => {
   };
 
   const redirection = () => {
-    if (sessionStorage.getItem("productSelected")) sessionStorage.removeItem("productSelected");
+    if (sessionStorage.getItem("productSelected"))
+      sessionStorage.removeItem("productSelected");
     sessionStorage.setItem("inputSelected", data.id);
     localStorage.setItem("unregistered", "input_buyer");
     navigate("/select-user-role");
   };
 
   const handleBuy = (id) => {
-    if (sessionStorage.getItem("productSelected")) sessionStorage.removeItem("productSelected");
+    if (sessionStorage.getItem("productSelected"))
+      sessionStorage.removeItem("productSelected");
     sessionStorage.setItem("inputSelected", id);
     localStorage.setItem("unregistered", "input_buyer");
     navigate("/select-user-role");
@@ -101,8 +105,7 @@ const InputListing = ({}) => {
         {inputActiveAdsList?.result?.length > 0 ? (
           <Typography
             onClick={() => navigate("/inputs")}
-            sx={{ ...productList.viewMore }}
-          >
+            sx={{ ...productList.viewMore }}>
             View More Items
           </Typography>
         ) : null}
@@ -116,14 +119,12 @@ const InputListing = ({}) => {
           "@media(max-width:480px)": {
             padding: "0 1rem",
           },
-        }}
-      >
+        }}>
         {inputActiveAdsList?.result?.length > 0 ? (
           <Box
             sx={{
               ...productList.container,
-            }}
-          >
+            }}>
             {inputActiveAdsList?.result?.map((item, index) => (
               <Card
                 key={index}
@@ -136,11 +137,11 @@ const InputListing = ({}) => {
                   "@media(max-width:480px)": {
                     width: "90%",
                   },
-                }}
-              >
+                }}>
                 <CardMedia
                   component="img"
                   height="180"
+                  loading="lazy"
                   image={generateImageUrl(item)}
                   alt={`Image ${index}`}
                   onClick={() => handleViewMore(index)}
@@ -158,7 +159,7 @@ const InputListing = ({}) => {
                     <AjDetailData
                       metaData="Quantity"
                       data={`${item?.available_quantity} ${textCapitalize(
-                        item?.unit_of_measurement
+                        item?.unit_of_measurement,
                       )}`}
                       styleData={{ ...styles.productListStyle }}
                     />
@@ -167,7 +168,7 @@ const InputListing = ({}) => {
                       metaData="Cost"
                       data={`${numberWithCommas(
                         item?.price_per_unit,
-                        item?.currency
+                        item?.currency,
                       )}/${textCapitalize(item?.unit_of_measurement)}`}
                       styleData={styles.productListStyle}
                     />
@@ -180,8 +181,7 @@ const InputListing = ({}) => {
                     sx={{ ...navstyles.signupStyleBuy }}
                     onClick={() => {
                       handleBuy(item?.id);
-                    }}
-                  >
+                    }}>
                     Buy
                   </Typography>
                 </Box>
@@ -192,8 +192,7 @@ const InputListing = ({}) => {
           <Box
             sx={{
               ...commonStyles.noContentBoxLanifnpage,
-            }}
-          >
+            }}>
             <AjTypography
               styleData={commonStyles.noDataText}
               displayText="No Input Available"
@@ -205,8 +204,7 @@ const InputListing = ({}) => {
           open={openModal}
           closeModal={setOpenModal}
           title="Input Details"
-          styleData={openProductDetailsStyles.openDialogModalContainer}
-        >
+          styleData={openProductDetailsStyles.openDialogModalContainer}>
           <AjOpenProductDetail
             closeModal={setOpenModal}
             data={data}

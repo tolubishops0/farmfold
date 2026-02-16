@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import ArrowRightAltSharpIcon from "@mui/icons-material/ArrowRightAltSharp";
@@ -17,13 +17,11 @@ function BrowseCategory() {
   const [filter, setFilter] = useState("all");
   const filters = ["all", "farm-produce", "value-added"];
 
-  const prodList =
-    filter === "all"
+  const prodList = useMemo(() => {
+    return filter === "all"
       ? products
       : products.filter((prod) => prod.category === filter);
-
-  console.log({ prodList });
-  console.log({ products }, "from categorits");
+  }, [filter, products]);
 
   useEffect(() => {
     const timer = setTimeout(() => {

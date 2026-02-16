@@ -1,4 +1,3 @@
-import React, { Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import theme from "./Style/theme";
 import { publicRoutes } from "./Routes/PublicRoutes";
