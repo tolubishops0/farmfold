@@ -159,7 +159,6 @@ export const ADMIN_EDIT_QA_COMPANIES = "edit/:id";
 export const FAQS_MANAGEMENT = "/admin/faqs-management";
 export const FAQS_MANAGEMENT_ADD = "add";
 export const FAQS_MANAGEMENT_EDIT = "edit/:id";
-export const FAQS = "/faqs";
 
 export const BLOG_MANAGEMENT = "/admin/blog-management";
 export const BLOG_MANAGEMENT_ADD = "add";
@@ -241,7 +240,8 @@ export const BANK_MANAGEMENT = "/bank-list";
 export const BANK_CARD_REQUEST = "/card-request";
 
 export const WHO_NEEDS_SOFTWARE = "/personas";
-export const VIEW_MARKETPLACE = "/view-marketplace";
-export const SELECTED_PRODUCT_DETAILS = "/details/:id";
+export const VIEW_MARKETPLACE = "/marketplace";
+export const SELECTED_PRODUCT_DETAILS = "/marketplace/details";
 export const VALUE_PROPOSITION = "our-value-propositions";
 export const ABOUT_US = "about-us";
+export const FAQS = "/faqs";

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Typography, Button, Divider, useMediaQuery } from "@mui/material";
+import { Box, Typography, Button, Divider } from "@mui/material";
 import { valueprop } from "./ValueProp.js";
 import { useNavigate } from "react-router";
 

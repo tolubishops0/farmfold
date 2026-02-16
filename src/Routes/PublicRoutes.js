@@ -42,7 +42,7 @@ export const publicRoutes = [
     component: <ViewMarketplace />,
   },
   {
-    path: SELECTED_PRODUCT_DETAILS,
+    path: `${SELECTED_PRODUCT_DETAILS}/:id`,
     component: <SelectedProductDetails />,
   },
 ];

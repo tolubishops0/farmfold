@@ -9,10 +9,7 @@ import testlefttarrow from "../Images/testleft.png";
 import testrightarrow from "../Images/testright.png";
 import { testimonials } from "./Testimonials.js";
 
-import {
-  testimonialsdesktopbackground,
-  testimonialsbackgroundmobile,
-} from "../../Constant/AppConstant.js";
+import { testimonialsbackgroundmobile } from "../../Constant/AppConstant.js";
 
 function Testimonials() {
   const isSmallScreen = useMediaQuery("(max-width: 768px)");

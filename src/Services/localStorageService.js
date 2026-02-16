@@ -13,11 +13,6 @@ export const decrypt = (data, secretKey) => {
   return originalText;
 };
 
-const getDescryptedVal = (val, secretKey) => {
-  let decryptObj = crypto.AES.decrypt(val, secretKey);
-  return _.attempt(_.invoke, decryptObj, "toString", crypto.enc.Utf8);
-};
-
 export const removeItem = (key) => {
   localStorage.removeItem(key);
 };

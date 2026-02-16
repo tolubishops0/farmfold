@@ -82,13 +82,6 @@ export const valueprop = {
   leftsideContainermapped: {
     width: "100%",
   },
-  parentContainer: {
-    cursor: "pointer",
-    position: "relative",
-    // transition: "padding 0.3s ease",
-    fontFamily: "DM Sans",
-    width: "100%",
-  },
   iconstyle: {
     width: "20px",
     transition: "width 0.3s ease",
@@ -181,8 +174,10 @@ export const valueprop = {
   },
 
   parentContainer: {
+    cursor: "pointer",
+    position: "relative",
+    fontFamily: "DM Sans",
     width: "100%",
-    display: "flex",
     "@media (max-width: 768px)": {
       flexDirection: "column",
     },

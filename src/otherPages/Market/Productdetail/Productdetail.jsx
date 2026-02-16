@@ -165,8 +165,6 @@ const MiddleImage = ({
   </Box>
 );
 
-// --- MAIN COMPONENT ---
-
 function Productdetail() {
   const navigate = useNavigate();
   const products = useProducts();
@@ -181,6 +179,7 @@ function Productdetail() {
   const [activeImageUrl, setActiveImageUrl] = useState(null);
   const [activeImageUrlOnPopUp, setactiveImageUrlOnPopUp] = useState(null);
   const [expandImage, setExpandImage] = useState(false);
+  const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
     setLoading(true);
@@ -215,12 +214,18 @@ function Productdetail() {
     setActiveImageUrl(url);
   };
 
-  const handleImageClickOnPopup = (index, url) => {
+  const handleImageClickOnPopup = (url) => {
     setactiveImageUrlOnPopUp(url);
     setExpandImage(true);
   };
 
-  // Optimization: Memoize image arrays so they don't recalculate on every click
+  const handleScroll = (event) => {
+    const scrollPosition = event.currentTarget.scrollLeft;
+    const itemWidth = event.currentTarget.offsetWidth;
+    const index = Math.round(scrollPosition / itemWidth);
+    setActiveStep(index);
+  };
+
   const newImgArr = useMemo(() => {
     const defaultImg = productDetail
       ? [{ file_path: productDetail.file_path }]
@@ -259,22 +264,70 @@ function Productdetail() {
                   setExpandImage={setExpandImage}
                 />
               )}
+
               {isSmallScreen && (
-                <Box
-                  sx={{
-                    width: "100%",
-                    height: "20rem",
-                    backgroundColor: "#F8F8F8",
-                  }}>
-                  <img
-                    src={activeImageUrl}
-                    style={{
+                <Box sx={{ width: "100%", backgroundColor: "#F8F8F8", pb: 2 }}>
+                  <Box
+                    onScroll={handleScroll}
+                    sx={{
                       width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                    }}
-                    alt="prod"
-                  />
+                      height: "22rem",
+                      display: "flex",
+                      overflowX: "auto",
+                      scrollSnapType: "x mandatory",
+                      "&::-webkit-scrollbar": { display: "none" },
+                      scrollbarWidth: "none",
+                    }}>
+                    {(newImgArr.length > 0
+                      ? newImgArr
+                      : [{ file_path: notFound }]
+                    ).map((item, index) => (
+                      <Box
+                        key={index}
+                        sx={{
+                          minWidth: "100%",
+                          height: "100%",
+                          scrollSnapAlign: "start",
+                          display: "flex",
+                          justifyContent: "center",
+                        }}>
+                        <img
+                          src={item.file_path}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "contain",
+                            objectPosition: "center",
+                          }}
+                          alt="product"
+                        />
+                      </Box>
+                    ))}
+                  </Box>
+
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      gap: 1,
+                    }}>
+                    {(newImgArr.length > 0
+                      ? newImgArr
+                      : [{ file_path: notFound }]
+                    ).map((index) => (
+                      <Box
+                        key={index}
+                        sx={{
+                          width: index === activeStep ? "24px" : "12px",
+                          height: "4px",
+                          borderRadius: "2px",
+                          backgroundColor:
+                            index === activeStep ? "#006D33" : "#C4C4C4",
+                          transition: "all 0.3s ease",
+                        }}
+                      />
+                    ))}
+                  </Box>
                 </Box>
               )}
               <RightDetails productDetail={productDetail} loading={loading} />
@@ -296,10 +349,16 @@ function Productdetail() {
         <Box sx={{ textAlign: "center" }}>
           <img
             src={activeImageUrlOnPopUp}
-            style={{ maxWidth: "100%", maxHeight: "60vh" }}
+            style={{
+              width: "90%",
+              height: "50vh",
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
             alt="zoom"
           />
-          <Box sx={{ display: "flex", gap: 1, mt: 2, overflowX: "auto" }}>
+          <Box
+            sx={{ display: "flex", gap: 1, mt: 2, overflowX: "auto", ml: 4 }}>
             {newImgArr.map((item, index) => (
               <img
                 key={index}
@@ -309,6 +368,8 @@ function Productdetail() {
                   width: "60px",
                   height: "60px",
                   cursor: "pointer",
+                  objectFit: "cover",
+                  objectPosition: "top",
                   border:
                     activeImageUrlOnPopUp === item.file_path
                       ? "2px solid green"

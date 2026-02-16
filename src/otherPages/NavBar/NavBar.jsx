@@ -13,38 +13,33 @@ import { logoRedirection } from "../../Services/commonService/commonService";
 import "../css/style.css";
 import { DASHBOARD } from "../../Routes/Routes";
 import menu from "../../Assets/Images/Group 88.png";
-// import rightarr from "../Images/navrightarrow.svg";
 import navrigtarrow from "../../Homepage/Images/navrightarrow.svg";
 import navbarcancel from "../../Homepage/Images/navbarcancel.svg";
 import logo from "../../Assets/Images/whitelogo.png";
+import { ROOT, ABOUT_US, VIEW_MARKETPLACE, FAQS } from "../../Routes/Routes";
 
 const pagesLarge = [
-  { label: "Home", link: "/" },
-  { label: "About Us", link: "/about-us" },
+  { label: "Home", link: ROOT },
+  { label: "About Us", link: ABOUT_US },
   {
     label: "Marketplace",
-    link: "/view-marketplace",
+    link: VIEW_MARKETPLACE,
   },
-  { label: "FAQs", link: "/faqs" },
-  // {
-  //   label: "Resources",
-  //   innerLinks: [
-  //     { label: "Recent Blogs", link: "/blog" },
-  //     { label: "FAQs", link: "/faqs" },
-  //   ],
-  // },
+  { label: "FAQs", link: FAQS },
 ];
 const pagessmall = [
-  { label: "Home", link: "/" },
-  { label: "About Us", link: "/about-us" },
-  { label: "Marketplace", link: "/view-marketplace" },
-  { label: "FAQs", link: "/faqs" },
-  // { label: "Blogs", link: "/blog" },
-  { label: "Log In", link: "#" },
-  { label: "Sign Up", link: "#" },
+  { label: "Home", link: ROOT },
+  { label: "About Us", link: ABOUT_US },
+  {
+    label: "Marketplace",
+    link: VIEW_MARKETPLACE,
+  },
+  { label: "FAQs", link: FAQS },
+  { label: "Log In", link: ROOT },
+  { label: "Sign Up", link: ROOT },
 ];
 
-function ResourceNavItem({ label, innerLinks, setInnerResourceLink }) {
+function ResourceNavItem({ label, innerLinks }) {
   const navigate = useNavigate();
   const location = useLocation();
   const [isHovering, setIsHovering] = React.useState(false);
@@ -68,8 +63,7 @@ function ResourceNavItem({ label, innerLinks, setInnerResourceLink }) {
         fontWeight: location.pathname === innerLinks[0].link ? "700" : "500",
         transition: "color 0.5s ease-in",
         margin: "0 2rem",
-        display: "flex",
-        alignItems: "center",
+
         "@media(max-width: 1400px)": {
           fontSize: "1rem",
         },
@@ -107,7 +101,6 @@ function ResourceNavItem({ label, innerLinks, setInnerResourceLink }) {
                 fontSize: "1.3rem",
                 fontFamily: "DM Sans",
                 lineHeight: "1.3rem",
-                cursor: "pointer",
                 textTransform: "capitalize",
                 color: location.pathname === page.link ? "#006d33" : "black",
                 fontWeight: location.pathname === page.link ? "700" : "500",
@@ -135,7 +128,6 @@ function ResponsiveAppBar() {
   const isSmallScreen = useMediaQuery("(max-width: 1149px)");
 
   const [openSideBar, setOpenSideBar] = React.useState(false);
-  const [innerResourceLink, setInnerResourceLink] = React.useState(false);
   const [isBoxVisible, setBoxVisibility] = React.useState(false);
 
   const CustomDivider = () => (
@@ -209,7 +201,6 @@ function ResponsiveAppBar() {
                     <ResourceNavItem
                       label={page.label}
                       innerLinks={page.innerLinks}
-                      setInnerResourceLink={setInnerResourceLink}
                     />
                   ) : (
                     <Typography

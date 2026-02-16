@@ -6,7 +6,6 @@ import {
   useMediaQuery,
   GlobalStyles,
 } from "@mui/material";
-import { useNavigate } from "react-router";
 
 import bannerav1 from "../Images/bannerav1.png";
 import bannerav2 from "../Images/qabanner.svg";
@@ -17,7 +16,6 @@ import bannerlg from "../Images/Banner.svg";
 import bannersm from "../Images/bannerhomepagesm.svg";
 
 function Banner() {
-  const navigate = useNavigate();
   const isSmallScreen = useMediaQuery("(max-width: 767px)");
 
   // Added 'delay' property to stagger the bobbling

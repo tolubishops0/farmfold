@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Button, useMediaQuery } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import apple from "../Images/apple.png";
 import playstore from "../Images/playstore.png";
 import { exploremobileapp } from "./ExploreMobileApp.js";

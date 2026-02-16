@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Button, useMediaQuery } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { aboutUs } from "../AboutUs";
 
 import { firsrtsection } from "../../../Constant/AppConstant";

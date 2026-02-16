@@ -1,6 +1,6 @@
 import React from "react";
 import { exploreSection } from "./ExploreSection.js";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { exploreimg } from "../../Constant/AppConstant.js";
 
 function ExploreSection() {

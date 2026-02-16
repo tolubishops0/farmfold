@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { AjRating } from "../../Components/AjRating.jsx";
 import { styles } from "./MarketStyle.js";
+import { SELECTED_PRODUCT_DETAILS } from "../../Routes/Routes.js";
 
 function MarketViewMoreList({ allOpenMarketPlaceProducts, alladsloading }) {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -53,7 +54,7 @@ function MarketViewMoreList({ allOpenMarketPlaceProducts, alladsloading }) {
 
   const urlLink = (item) => {
     let linkTo;
-    linkTo = `/details/${item?.id}`;
+    linkTo = `${SELECTED_PRODUCT_DETAILS}/${item?.id}`;
     return linkTo;
   };
 

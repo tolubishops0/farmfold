@@ -1,19 +1,5 @@
 export const products = [
   {
-    id: 1,
-    name: "Palm Oil",
-    price: "₦3,500",
-    unit: "per liter",
-    rating: 4,
-    category: "value-added",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGbuNvNYC6aJACM6eUymdaSAcl8RKCYxgFqjpbZQwThg&s",
-    other_images: [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGr70Xw6sGolrW3-Qw4-YJQR1OD1RYGulnJIYlvFoRig&s",
-    ],
-    description: "Pure red palm oil with no additives.",
-  },
-  {
     id: 2,
     name: "Yam Tubers",
     price: "₦1,200",
@@ -26,6 +12,21 @@ export const products = [
       "https://images.unsplash.com/photo-1617130094141-532436117aa1?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ],
     description: "Freshly harvested yam tubers grown locally.",
+  },
+  {
+    id: 9,
+    name: "Farm Spice Mix",
+    price: "₦1,200",
+    unit: "per pack",
+    rating: 2,
+    category: "value-added",
+    image:
+      "https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&q=80&w=800",
+    other_images: [
+      "https://images.unsplash.com/photo-1506368249639-73a05d6f6488?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=800",
+    ],
+    description: "Blended spices made from farm produce.",
   },
   {
     id: 3,
@@ -114,21 +115,7 @@ export const products = [
     ],
     description: "Farm fresh eggs collected daily.",
   },
-  {
-    id: 9,
-    name: "Farm Spice Mix",
-    price: "₦1,200",
-    unit: "per pack",
-    rating: 2,
-    category: "value-added",
-    image:
-      "https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&q=80&w=800",
-    other_images: [
-      "https://images.unsplash.com/photo-1506368249639-73a05d6f6488?auto=format&fit=crop&q=80&w=800",
-      "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&q=80&w=800",
-    ],
-    description: "Blended spices made from farm produce.",
-  },
+
   {
     id: 10,
     name: "Plantain",
@@ -255,6 +242,20 @@ export const products = [
       "https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&q=80&w=800",
     ],
     description: "Dry onions with long shelf life.",
+  },
+  {
+    id: 1,
+    name: "Palm Oil",
+    price: "₦3,500",
+    unit: "per liter",
+    rating: 4,
+    category: "value-added",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGbuNvNYC6aJACM6eUymdaSAcl8RKCYxgFqjpbZQwThg&s",
+    other_images: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGr70Xw6sGolrW3-Qw4-YJQR1OD1RYGulnJIYlvFoRig&s",
+    ],
+    description: "Pure red palm oil with no additives.",
   },
   {
     id: 19,

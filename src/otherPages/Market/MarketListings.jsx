@@ -14,11 +14,12 @@ import { AjRating } from "../../Components/AjRating";
 import { styles } from "./MarketStyle";
 import AjTypography from "../../Components/AjTypography";
 import { commonStyles } from "../../Style/CommonStyle";
+import { SELECTED_PRODUCT_DETAILS } from "../../Routes/Routes";
 
 function MarketListings({ products, loading }) {
   const urlLink = (item) => {
     let linkTo;
-    linkTo = `/details/${item?.id}`;
+    linkTo = `${SELECTED_PRODUCT_DETAILS}/${item?.id}`;
     return linkTo;
   };
 

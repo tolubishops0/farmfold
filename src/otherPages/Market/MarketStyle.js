@@ -339,7 +339,7 @@ export const styles = {
   },
   productname: {
     fontWeight: "700",
-    fontFamily: "DM Sans",
+
     fontSize: "1rem",
     lineHeight: "2rem",
     color: "black",
@@ -353,7 +353,6 @@ export const styles = {
   ratecount: {
     fontWeight: "400",
     fontSize: ".8rem",
-    fontFamily: "DM Sans",
     lineHeight: ".9rem",
     color: "#686868",
     textTransform: "capitalize",
@@ -833,7 +832,7 @@ export const styles = {
     color: "#686868",
     lineHeight: "1.5rem",
     fontWeight: "400",
-    fontFamily: "DM Sans",
+
     "@media(max-width: 1100px)": {
       lineHeight: "1.5rem",
       fontSize: "1rem",
@@ -900,10 +899,6 @@ export const styles = {
       lineHeight: "1rem",
       fontSize: ".8rem",
     },
-    "@media(max-width: 1400px)": {
-      lineHeight: "1rem",
-      fontSize: "1.3rem",
-    },
   },
   ratingdetails: {
     fontSize: "1rem",
@@ -911,7 +906,7 @@ export const styles = {
     lineHeight: "0.8rem",
     fontWeight: "700",
     color: "#006D33",
-    marginTop: "5px",
+    // marginTop: "5px",
     "@media(max-width: 1100px)": {
       fontSize: ".8rem",
     },
@@ -1135,8 +1130,7 @@ export const styles = {
       gap: "1rem",
       // padding: "0 1.5rem",
       alignItems: "center",
-      // justifyContent: "center",
-      alignItems: "center",
+
       minWidth: "300px",
       width: "100%",
     },
@@ -1150,8 +1144,6 @@ export const styles = {
     "@media(max-width: 768px)": {
       gap: "1rem",
       padding: "0 1rem",
-      alignItems: "center",
-      // justifyContent: "center",
       alignItems: "center",
     },
   },

@@ -17,11 +17,12 @@ import { styles } from "../../otherPages/Market/MarketStyle";
 import { commonStyles } from "../../Style/CommonStyle";
 import { Link } from "react-router-dom";
 import "../../otherPages/css/style.css";
+import { SELECTED_PRODUCT_DETAILS } from "../../Routes/Routes";
 
 function ProductlistCard(props) {
   const urlLink = (item) => {
     let linkTo;
-    linkTo = `/details/${item?.id}`;
+    linkTo = `${SELECTED_PRODUCT_DETAILS}/${item?.id}`;
     return linkTo;
   };
 

@@ -5,7 +5,6 @@ import {
   OPEN_ADS,
   PRODUCT_ORDER_QA,
   TRANSIT_ORDERS,
-  FARMER_SUBSCRIPTION,
 } from "../Routes/Routes";
 export const ROLES = {
   FARMING_ASSOCIATION: 1,

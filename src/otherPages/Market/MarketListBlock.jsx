@@ -21,7 +21,6 @@ import { isTextValid } from "../../Services/commonService/commonService.js";
 function MarketListBlock() {
   const products = useProducts();
   const [searchText, setSearchText] = useState("");
-  const [searchClick, setSearchClick] = useState(true);
 
   const [openFilter, setOpenFilter] = useState(false);
   const [category, setCategory] = useState("all");
@@ -37,14 +36,14 @@ function MarketListBlock() {
   const onEnterPress = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      setSearchClick((p) => !p);
+      // setSearchClick((p) => !p);
     }
   };
 
   const handleSearchTextChange = (e) => {
     if (isTextValid(e.target.value)) {
       setSearchText(e.target.value);
-      if (!e.target.value.length) setSearchClick((p) => !p);
+      // if (!e.target.value.length) setSearchClick((p) => !p);
     }
   };
 
@@ -129,7 +128,7 @@ function MarketListBlock() {
               <img
                 src="https://res.cloudinary.com/dpnyywwjb/image/upload/v1700037960/search-normal_e1dfyg.svg"
                 alt="search"
-                onClick={() => setSearchClick((p) => !p)}
+                // onClick={() => setSearchClick((p) => !p)}
               />
             }
           />
@@ -172,7 +171,7 @@ function MarketListBlock() {
                 <img
                   src="https://res.cloudinary.com/dpnyywwjb/image/upload/v1700037960/search-normal_e1dfyg.svg"
                   alt="search"
-                  onClick={() => setSearchClick((p) => !p)}
+                  // onClick={() => setSearchClick((p) => !p)}
                 />
               }
             />

@@ -20,7 +20,6 @@ import img9 from "../Assets/Images/Cotecna_gtwzaj.jpg";
 import value_icon_1_ from "../Assets/Images/Frame 1000001935.png";
 import value_icon_2_ from "../Assets/Images/Frame 1000001935 (2).png";
 import value_icon_3_ from "../Assets/Images/Frame 1000001935 (3).png";
-import formerKYCVerification from "../Assets/Images/kyc_verify_icon.png";
 import value_icon_4_ from "../Assets/Images/Frame 1000001935 (4).png";
 import value_icon_5_ from "../Assets/Images/Frame 1000001935 (5).png";
 

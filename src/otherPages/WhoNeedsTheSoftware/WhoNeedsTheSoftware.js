@@ -343,7 +343,6 @@ export const whoneeds = {
     position: "absolute",
     width: "40%",
     left: "5%",
-    transform: "translateX(-5%)",
     display: "flex",
     flexDirection: "column",
     gap: "1rem",

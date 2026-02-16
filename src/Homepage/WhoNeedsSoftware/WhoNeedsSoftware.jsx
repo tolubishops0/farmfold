@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Button, useMediaQuery } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import { whoneedssoftware } from "./WhoNeedsSoftware.js";
 import faicon from "../Images/faicon.png";
 import qa from "../Images/qa.svg";

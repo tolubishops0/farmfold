@@ -126,7 +126,6 @@ export const browseCategry = {
 
   activeFilter: {
     background: "rgba(0, 109, 51, 0.05)",
-    border: "1px solid #006D33",
     color: "#006D33",
     fontWeight: "400",
     fontSize: "1rem",

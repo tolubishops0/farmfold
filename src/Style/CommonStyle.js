@@ -369,23 +369,6 @@ export const commonStyles = {
     },
   },
 
-  inputStyleSubscribe: {
-    width: "100%",
-    height: "3.5rem",
-    padding: "1rem",
-    marginTop: "0.5rem",
-    background: "#FFFFFF",
-    border: "0.063rem solid #F2F2F2",
-    boxSizing: "border-box",
-    boxShadow: "0px 0.25rem 0.5rem rgba(0, 0, 0, 0.04)",
-    borderRadius: "0.5rem",
-    "& .MuiOutlinedInput-notchedOutline": {
-      border: "none",
-    },
-    "input[type='password']": {
-      paddingLeft: "0px",
-    },
-  },
   inputStyleSubscribeselect: {
     width: "20%",
     height: "3rem",
@@ -433,7 +416,6 @@ export const commonStyles = {
     marginTop: "0.5rem",
     background: "#FCFCFC",
     border: "1px solid rgba(109, 158, 63, 0.15)",
-    borderRadius: "8px",
     boxSizing: "border-box",
     boxShadow: "0px 0.25rem 0.5rem rgba(0, 0, 0, 0.04)",
     borderRadius: "0.5rem",
@@ -977,17 +959,6 @@ export const commonStyles = {
     flexDirection: "column",
     width: "100%",
     paddingBlock: ".5rem",
-    "@media(max-width:600px)": {
-      margin: "0",
-    },
-  },
-
-  randomSubscribeContainer: {
-    margin: "auto",
-    display: "flex",
-    flexDirection: "column",
-    gap: "3rem",
-    width: "fit-content",
     "@media(max-width:600px)": {
       margin: "0",
     },
@@ -1923,7 +1894,6 @@ export const customCommonStyles = {
     lineHeight: "1.25rem",
     border: "0.1rem solid #6D9E3F",
     boxSizing: "border-box",
-    fontSize: "0.6rem",
     borderRadius: "0.5rem",
     paddingLeft: "0.75rem",
     "@media(max-width:480px)": {
@@ -2795,7 +2765,6 @@ export const aboutUs = {
   coreValueHeader: {
     margin: "0.5rem 0 ",
     color: PRIMARY_GREEN,
-    fontWeight: "600",
     fontSize: "1.6rem",
     fontWeight: "500",
     "@media (max-width: 768px)": {

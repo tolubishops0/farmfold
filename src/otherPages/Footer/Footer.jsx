@@ -36,14 +36,14 @@ function Footer() {
               streamlines activities across the agricultural value chain.
             </Typography>
             <Typography sx={footer.socialmediaicons}>
-              <a href="#">
+              <a href="/">
                 <img
                   src={fb}
                   alt="facebook logo"
                   style={{ cursor: "pointer" }}
                 />
               </a>
-              <a href="#">
+              <a href="/">
                 {" "}
                 <img
                   src={insta}
@@ -52,7 +52,7 @@ function Footer() {
                 />
               </a>
 
-              <a href="#">
+              <a href="/">
                 {" "}
                 <img
                   src={x}
@@ -60,7 +60,7 @@ function Footer() {
                   style={{ cursor: "pointer" }}
                 />
               </a>
-              <a href="#">
+              <a href="/">
                 {" "}
                 <img
                   src={linkedin}
@@ -68,7 +68,7 @@ function Footer() {
                   style={{ cursor: "pointer" }}
                 />
               </a>
-              <a href="#">
+              <a href="/">
                 {" "}
                 <img
                   src={yt}
@@ -95,12 +95,12 @@ function Footer() {
           {!isSmallScreen && (
             <Box sx={footer.midcontent}>
               <Typography sx={footer.midcontentsheader}>More</Typography>
-              <Link to="#" style={{ textDecoration: "none" }}>
+              <Link to="/" style={{ textDecoration: "none" }}>
                 <Typography sx={footer.midcontentsText}>
                   Terms & Conditions{" "}
                 </Typography>
               </Link>{" "}
-              <Link to="#" style={{ color: "white", textDecoration: "none" }}>
+              <Link to="/" style={{ color: "white", textDecoration: "none" }}>
                 <Typography sx={footer.midcontentsText}>
                   Data Privacy{" "}
                 </Typography>
@@ -116,13 +116,13 @@ function Footer() {
                 +234 800000122
               </Typography>
             </a>
-            <a href="#" style={{ textDecoration: "none" }}>
+            <a href="/" style={{ textDecoration: "none" }}>
               <Typography sx={footer.rightcontentsText}>
                 <img src={mail} alt="email icon" />
                 admin@farmfold.com{" "}
               </Typography>
             </a>
-            <a href="#" style={{ textDecoration: "none" }}>
+            <a href="/" style={{ textDecoration: "none" }}>
               <Typography sx={footer.rightcontentsText}>
                 <img src={location} alt="address icon" />
                 Lagos, Nigeria
@@ -135,13 +135,13 @@ function Footer() {
           {isSmallScreen && (
             <Box sx={footer.bottomtopcontent}>
               <Typography sx={footer.midcontentsText}>
-                <Link to="#" style={{ color: "white", textDecoration: "none" }}>
+                <Link to="/" style={{ color: "white", textDecoration: "none" }}>
                   Terms & Conditions
                 </Link>
               </Typography>
               <Typography sx={footer.midcontentsText}>
                 {" "}
-                <Link to="#" style={{ color: "white", textDecoration: "none" }}>
+                <Link to="/" style={{ color: "white", textDecoration: "none" }}>
                   Data Privacy
                 </Link>
               </Typography>{" "}

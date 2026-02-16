@@ -6,7 +6,6 @@ import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 
 import { SIGNIN } from "../Routes/Routes";
 
-import { styles } from "../Containers/Layout/LayoutStyle";
 import { styles as viewSupportStyles } from "../Containers/GStyles/ViewSupportStyles";
 import { styles as CsvBulkStyle } from "../Containers/GStyles/AjCsvBulkUploaderStyles";
 import { pageNotFoundStyle } from "./pageNotFoundStyle";
@@ -25,8 +24,6 @@ const PageNotFound = () => {
 
   return (
     <Grid>
-      <Grid sx={{ ...styles.logoImageContainer }}></Grid>
-
       <Grid>
         <Grid
           container
